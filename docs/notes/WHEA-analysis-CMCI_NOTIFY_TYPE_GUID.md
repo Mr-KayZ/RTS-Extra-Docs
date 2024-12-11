@@ -1,10 +1,9 @@
 ---
 layout: default
 title: WHEA Analysis
-nav_enabled: true
 nav_exclude: false
 has_children: false
-parent: docs
+parent: index
 search_exclude: false
 last_modified_date: 2024-10-12
 ---

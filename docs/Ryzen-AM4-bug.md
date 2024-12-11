@@ -4,7 +4,6 @@ title: Ryzen Memory Voltage bugs
 nav_enabled: true
 nav_exclude: false
 has_children: false
-parent: docs
 search_exclude: false
 last_modified_date: 2024-10-12
 ---

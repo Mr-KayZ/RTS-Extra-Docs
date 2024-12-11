@@ -4,11 +4,12 @@ title: Intel 13th and 14th issues
 nav_enabled: true
 nav_exclude: false
 has_children: false
-parent: docs
 search_exclude: false
 last_modified_date: 2024-10-12
 ---
 # Intel 13th and 14th CPUs - Overvoltage and oxidized vias
+{: .no_toc }
+
 ## Background
 
 The issue with 13th and 14th gen Intel CPUs has been covered greatly by many tech youtubers. If you wish to learn more, I highly recommend watching GamersNexus's and Level1Tech's videos that go into deep details about what the issue is about and how it is impacting users:

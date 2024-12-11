@@ -1,6 +1,6 @@
 remote_theme: just-the-docs/just-the-docs
 
-title: MrKayZ's extra Notes
+title: Mr KayZ's Extra Notes
 description: Personal Extension to the r/techsupport Wiki
 theme: just-the-docs
 
@@ -15,7 +15,6 @@ color_scheme: dark
 
 nav_enabled: true
 heading_anchors: true
-sticky_navigation: true
 
 back_to_top: true
 back_to_top_text: "Back to top"
