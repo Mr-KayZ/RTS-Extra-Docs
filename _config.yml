@@ -1,8 +1,42 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+remote_theme: just-the-docs/just-the-docs
+
+title: MrKayZ's extra Notes
+description: Personal Extension to the r/techsupport Wiki
 theme: just-the-docs
 
 url: https://just-the-docs.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+ Template Repository: https://github.com/Mr-KayZ/RTS-Extra-Docs
+
+favicon_ico: "/assets/logo/dead_inside-black.ico"
+
+color_scheme: dark
+
+nav_enabled: true
+heading_anchors: true
+sticky_navigation: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%Y-%m-%d" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+footer_content: "Copyright &copy; 2024 Mr-KayZ. Distributed by an <a href=\"https://github.com/Mr-KayZ/RTS-Extra-Docs/blob/main/LICENSE\">MIT license.</a>"
+
+callouts_level: quiet # or loud
+callouts:
+  important:
+    title: important
+    color: yellow
+  quote:
+    title: quote
+    color: grey-lt
+  note:
+    title: Note
+    color: green
+  warning:
+    title: Warning
+    color: red
+    

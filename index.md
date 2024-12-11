@@ -1,35 +1,32 @@
 ---
-title: Home
-layout: home
+
+layout: default
+
+title: Homepage
+
+nav_exclude: false
+
+last_modified: 2024-10-12
+
+---
+# Welcome to my personal techsupport wiki!
+## Current articles:
+
+* [Intel 13th and 14th CPUs - Overvoltage and oxidized vias](/docs/Intel-13th-and-14th-bug)
+* [Lenovo Legion T5 prebuilt - DPC_WATCHDOG_VIOLATION issues](/docs/Lenovo-Legion-T5-bug)
+* [AMD AM4 CPUs - Ryzen Memory Voltage bugs](/docs/Ryzen-AM4-bug)
+
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+## Purpose of this Wiki
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+Hello! This is a personal extension of the [r/techsupport wiki](https://rtech.support/) that explores more obscure and unknown tech issues and provides unique fixes beyond standard troubleshooting methods.
 
-More specifically, the created site:
+This wiki serves as a resource for solving rare and perplexing technical problems with innovative solutions. (Also because I can update this faster than the official r/techsupport wiki lol.)
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+It also serves as a personal notes collection of which that allows me to 
+## How can I contribute?
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+If you wish to see more articles and potential fixes, feel free to reach out to me using the email [mrkayz.wiki@gmail.com](mailto:mrkayz.wiki@gmail.com) to give me tips on other current tech issues that require a unique way to solve them. I would gladly appreciate any information I can get!
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, simply:
-
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
-
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+If you have tech issues, please feel free to write up the issue in the reddit [TechSupport (reddit.com)](https://www.reddit.com/r/techsupport/). Otherwise, you can head to the live chat [Discord](https://discord.com/invite/2EDwzWa) to chat with helpers, including me!

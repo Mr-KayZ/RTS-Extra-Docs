@@ -1,33 +1,34 @@
 ---
 layout: default
 title: WHEA Analysis
+nav_enabled: true
 nav_exclude: false
 has_children: false
 parent: docs
 search_exclude: false
-last_modified_date: 2024-12-10
+last_modified_date: 2024-10-12
 ---
 # SPECIFY - WHEA error records - CMCI_NOTIFY_TYPE_GUID
 
 Suppose you encounter a WHEA in specify where there are no specific MCE records (Its a CMCI notify type - **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
 
 For context, CMCI - Corrected Machine Check Interrupt - Means that the WHEA error was encountered by Windows, but was corrected accordingly. This is why the severity of the crash is not fatal but "Warning".
-
-![[Pasted image 20241210131704.png]]
+![assets/img/WHEA_Analysis/WHEA_Error_Records.png](/assets/img/WHEA_Analysis/WHEA_Error_Records.png)
 
 ## Error Descriptors
-
 To do this, we analyze what the error packet specifically says. The specify report has multiple error descriptors split up into sections (in accordance with the error packets). Each section of the packet refers to a section in the Error Descriptors.
+
 ### Error Descriptor Sections
 In this example, we have 4 sections A, B, C, D, corresponding to the 4 sections represented in the error packet:
+![assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png](/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png)
 
-![[Pasted image 20241210155923.png]]
 One way to tell one section from another is that all sections start with offset `0x00`. This is true for all offsets present in the Error packet. Each error descriptor has their own details, mainly the section type. The section type depicts what GUID the error packet belongs to so it can be identified accordingly.
 
 You can see in Sections `A`, `B` and `D` of this particular packet, the section types refer to the following generic calls that gives us more information about the WHEA:
 - Section A - `MEMORY_ERROR_SECTION_GUID` - This tells us the WHEA is reportedly within the memory section of the device. In this case it is the CPU.
 - Section B - `PROCESSOR_GENERIC_ERROR_SECTION_GUID` - This is what tells us the CPU is at fault. Still, we are not fully aware whether if by memory, it means the memory controller or cache.
 - Section D - `RECOVERY_INFO_SECTION_GUID` - Contains the recovery info, since this was a corrected machine check, the details are present here on what steps Windows has taken to fix this.
+
 ### WHEA_XPF_MCA_SECTION
 You may notice there is one section here which contains a "UNKNOWN GUID", section C. The GUID states `8a1e1d01-42f9-4557-9c33-565e5cc3f7e8`, which Googling reveals it is a [WHEA_XPF_MCA_SECTION](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_xpf_mca_section). This is a machine check exception error section structure, meaning we can find more details regarding it. This is exactly what we need out of this 
 
@@ -131,6 +132,6 @@ We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD
 - Processor Number - `11` (Thread 11, Core 5)
 - MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - Thanks Jim)
-![[Pasted image 20241210172654.png]]
+![assets/img/WHEA_Analysis/wheamcerror_python.png](/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
 Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now.

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Lenovo Legion T5 bug
+nav_enabled: true
 nav_exclude: false
 has_children: false
 parent: docs
@@ -10,9 +11,9 @@ last_modified_date: 2024-10-12
 # Lenovo Legion T5 prebuilt - DPC_WATCHDOG_VIOLATION issues
 ## Background
 
-The Lenovo Legion T5 has been experiencing issues related to its Nvidia GPU drivers. Users have reported frequent crashes, freezing, and blue screen errors (BSOD) when using certain Nvidia drivers, particularly DPC_WATCHDOG_VIOLATION BSODs.
+The Lenovo Legion T5 has been experiencing issues related to its Nvidia GPU drivers. Users have reported frequent crashes, freezing, and blue screen errors (BSOD) when using certain Nvidia drivers, particularly `DPC_WATCHDOG_VIOLATION` BSODs.
 
-The root cause of the GPU issues in the Lenovo Legion T5 appears to be an incompatibility between the Nvidia audio and graphics drivers and the other system components. This incompatibility can lead to conflicts that result in frequent crashes, freezing, and BSOD errors. This is a manufacturing issue from Lenovo.
+The root cause of the GPU issues in the Lenovo Legion T5 appears to be an incompatibility between the Nvidia audio and graphics drivers and the other system components. This incompatibility can lead to conflicts that result in frequent crashes, freezing, and BSOD errors. **This is a manufacturing issue from Lenovo.**
 
 Additionally, some users have reported that the PCI Express Root Port is also a contributing factor. This component, related to the video card, can cause hardware errors that further exacerbate the instability issues.
 
