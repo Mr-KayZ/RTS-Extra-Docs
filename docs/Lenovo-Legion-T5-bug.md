@@ -31,6 +31,10 @@ All symptoms are common to a misbehaving GPU driver. Only difference here is tha
 ## Known Solution
 
 - First, follow the steps to [reinstall NVidia drivers via DDU](https://rtech.support/docs/factoids/ddu.html)
-- Next run the [Lenovo patch tool](https://support.lenovo.com/us/en/solutions/ht513793-system-may-blue-screen-bsod-after-installing-nvidia-graphics-driver-version-2721146231-legion-t5-28imb05) after reinstalling the NVidia drivers.
+- Next run the [Lenovo patch tool](https://support.lenovo.com/us/en/solutions/ht513793-system-may-blue-screen-bsod-after-installing-nvidia-graphics-driver-version-2721146231-legion-t5-28imb05) after reinstalling the NVidia drivers:
+	- Download the Patch tool from here: [Lenovo T5 Support Page](https://pcsupport.lenovo.com/us/en/products/desktops-and-all-in-ones/legion-series/legion-t5-28imb05/downloads/driver-list/component?name=Patch)
+	- Unzip the tool file, three files should be present in the zip file.
+	- Run the `Repair bsod instruction.cmd` file as administrator.
+	- If successful, in Device Manager, the NVIDA USB 3.10 eXtensible Host Controller device will now have a download arrow in front of it. Install it, and you may restart the PC.
 
 This is in accordance with Lenovo guidelines and documentation, and has been proven to work across multiple systems.
