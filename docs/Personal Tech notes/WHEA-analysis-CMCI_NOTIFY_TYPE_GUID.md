@@ -5,7 +5,7 @@ nav_exclude: false
 has_children: false
 parent: docs
 search_exclude: false
-last_modified_date: 2024-10-12
+last_modified_date: 2024-12-10
 ---
 # SPECIFY - WHEA error records - CMCI_NOTIFY_TYPE_GUID
 
