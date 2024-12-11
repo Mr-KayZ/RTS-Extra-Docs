@@ -12,14 +12,14 @@ last_modified_date: 2024-10-12
 Suppose you encounter a WHEA in specify where there are no specific MCE records (Its a CMCI notify type - **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
 
 For context, CMCI - Corrected Machine Check Interrupt - Means that the WHEA error was encountered by Windows, but was corrected accordingly. This is why the severity of the crash is not fatal but "Warning".
-![assets/img/WHEA_Analysis/WHEA_Error_Records.png](/assets/img/WHEA_Analysis/WHEA_Error_Records.png)
+![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png)
 
 ## Error Descriptors
 To do this, we analyze what the error packet specifically says. The specify report has multiple error descriptors split up into sections (in accordance with the error packets). Each section of the packet refers to a section in the Error Descriptors.
 
 ### Error Descriptor Sections
 In this example, we have 4 sections A, B, C, D, corresponding to the 4 sections represented in the error packet:
-![assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png](/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png)
+![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png)
 
 One way to tell one section from another is that all sections start with offset `0x00`. This is true for all offsets present in the Error packet. Each error descriptor has their own details, mainly the section type. The section type depicts what GUID the error packet belongs to so it can be identified accordingly.
 
@@ -131,6 +131,6 @@ We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD
 - Processor Number - `11` (Thread 11, Core 5)
 - MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - Thanks Jim)
-![assets/img/WHEA_Analysis/wheamcerror_python.png](/assets/img/WHEA_Analysis/wheamcerror_python.png)
+![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
 Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now.
