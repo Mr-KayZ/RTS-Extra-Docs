@@ -5,6 +5,10 @@ title: Mr KayZ's Extra Notes
 description: Personal Extension to the r/techsupport Wiki
 url: https://github.com/Mr-KayZ
 
+aux_links:
+    "Refer to the official Wiki here!":
+        - "https://rtech.support/"
+
 sticky_navigation: true
 
 favicon_ico: "/RTS-Extra-Docs/assets/logo/dead_inside-black.ico"
@@ -36,4 +40,4 @@ callouts:
   warning:
     title: Warning
     color: red
-    
+

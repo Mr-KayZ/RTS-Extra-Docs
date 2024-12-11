@@ -1,13 +1,19 @@
 ---
 layout: default
-title: Ryzen Memory Voltage bugs
-nav_enabled: true
+title: AMD AM4 CPUs - Ryzen Memory Voltage bugs
 nav_exclude: false
 has_children: false
+parent: Issues and How to Solve them
+# grand_parent: 
+# has_toc: false
 search_exclude: false
-last_modified_date: 2024-10-12
+last_modified_date: 2024-12-10
 ---
 # AMD AM4 CPUs - Ryzen Memory Voltage bugs
+{: .no_toc }
+
+{% include toc.md %}
+
 ## Background
 
 This bug is quite common amongst users especially after the Ryzen 5000 X3D CPUs came out. The bug in question mainly deals with users crashing when the PC is at idle, not under load. This is mainly due to the updated BIOS's incorrectly sending too low voltages to the memory controller, causing it to make incorrect decisions and mishandles the memory, and therefore crashes the system.

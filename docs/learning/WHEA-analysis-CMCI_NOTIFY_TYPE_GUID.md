@@ -1,18 +1,22 @@
 ---
 layout: default
-title: WHEA Analysis
+title: WHEA-Analysis - Corrected Machine Check Interrupt
 nav_exclude: false
 has_children: false
-parent: index
+parent: Learning and Notes
+# grand_parent: 
+# has_toc: false
 search_exclude: false
-last_modified_date: 2024-10-12
+last_modified_date: 2024-12-10
 ---
-# SPECIFY - WHEA error records - CMCI_NOTIFY_TYPE_GUID
+# SPECIFY - WHEA error records - Corrected Machine Check Interrupt
 
-Suppose you encounter a WHEA in specify where there are no specific MCE records (Its a CMCI notify type - **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
+Suppose you encounter a WHEA in specify where there are no specific MCE records (Instead it states `CMCI_NOTIFY_TYPE_GUID` in the Notify type - This stands for **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
 
 For context, CMCI - Corrected Machine Check Interrupt - Means that the WHEA error was encountered by Windows, but was corrected accordingly. This is why the severity of the crash is not fatal but "Warning".
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png)
+
+This however does not mean there isn't an issue with the hardware. A WHEA error can still be a potential hardare problem after all.
 
 ## Error Descriptors
 To do this, we analyze what the error packet specifically says. The specify report has multiple error descriptors split up into sections (in accordance with the error packets). Each section of the packet refers to a section in the Error Descriptors.
@@ -82,7 +86,8 @@ With this, we can now translate the error packet. Remember, all error packets st
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  - 0x110 - ................
 ```
 
-This looks a bit hard to read, so let's pretty it up a bit by splitting up bytes  into what we know so we can translate it properly. We would need to know the size of the items present, and the [variable types in the struct](https://docs.rs/windows-sys/latest/windows_sys/Wdk/System/SystemServices/struct.WHEA_XPF_MCA_SECTION.html) already tells us how many bytes each variable is already:
+## Translation and analysis
+The error packet is quite hard to read by itself. So let's pretty it up a bit by splitting up bytes into what we know so we can translate it properly. We would need to know the size of the items present, and the [variable types in the struct](https://docs.rs/windows-sys/latest/windows_sys/Wdk/System/SystemServices/struct.WHEA_XPF_MCA_SECTION.html) already tells us how many bytes each variable is already:
 
 | Variable Name               | Variable Type   | Variable Size (Bytes) |
 | :-------------------------- | :-------------- | --------------------: |
@@ -95,7 +100,7 @@ This looks a bit hard to read, so let's pretty it up a bit by splitting up bytes
 | Bank Number                 | ULONG           |                     4 |
 | MCI Status                  | MCI_STATUS      |                     8 |
 
-These are the ones that we care for the most. As a matter of fact, almost everything after MCI status can be ignored as we do not have internal documentation regarding how those work. We can now split the error packet accordingly:
+These are the ones that we care for the most. As a matter of fact, almost everything after MCI status can be ignored as we do not have internal documentation regarding how those work (Damn you manufacturers!). We can now split the error packet accordingly:
 
 ```
 03 00 00 00             - Version No.
@@ -128,9 +133,9 @@ We can ignore the rest here:
 Another thing to take note here is the fact that all of these values are little endian, so the bytes are "backwards". In this case, `03 00 00 00` is read `00 00 00 03`. `12 34 56 78` would be read `78 56 34 12`, etc.
 
 We can now translate the MCI status codes into the following:
-- CPU Vendor - AMD
+- CPU Vendor - AMD (`01` is Intel, `02` is AMD)
 - Processor Number - `11` (Thread 11, Core 5)
-- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - Thanks Jim)
+- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code here: )
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
-Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now.
+Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the Ryzen Voltage bug, but also keep an eye out on which core/thread this is always occuring on. If its the same core/thread, you may also potentially be dealing with a fried core as well.
