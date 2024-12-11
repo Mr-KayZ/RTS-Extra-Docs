@@ -1,15 +1,13 @@
-remote_theme: just-the-docs/just-the-docs
-
 title: Mr KayZ's Extra Notes
 description: Personal Extension to the r/techsupport Wiki
 theme: just-the-docs
 
-repository: Mr-KayZ/RTS-Extra-Docs # for github-metadata
+url: https://just-the-docs.github.io
 
-# Aux links for the upper right navigation
 aux_links:
-  "Just the Docs on GitHub":
-    - "https://github.com/just-the-docs/just-the-docs"
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+repository: Mr-KayZ/RTS-Extra-Docs # for github-metadata
 
 favicon_ico: "/assets/logo/dead_inside-black.ico"
 
