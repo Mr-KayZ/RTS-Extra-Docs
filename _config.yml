@@ -1,20 +1,18 @@
-title: Mr KayZ's Extra Notes
-description: Personal Extension to the r/techsupport Wiki
+remote_theme: just-the-docs/just-the-docs
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+title: Mr KayZ's Extra Notes
+description: Personal Extension to the r/techsupport Wiki
+url: https://github.com/Mr-KayZ
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
-
-repository: Mr-KayZ/RTS-Extra-Docs # for github-metadata
+sticky_navigation: true
 
 favicon_ico: "/assets/logo/dead_inside-black.ico"
 
 color_scheme: dark
 
-nav_enabled: true
-heading_anchors: true
+#nav_enabled: true
+#heading_anchors: true
 
 back_to_top: true
 back_to_top_text: "Back to top"
