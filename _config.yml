@@ -4,10 +4,12 @@ title: Mr KayZ's Extra Notes
 description: Personal Extension to the r/techsupport Wiki
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+repository: Mr-KayZ/RTS-Extra-Docs # for github-metadata
 
+# Aux links for the upper right navigation
 aux_links:
- Template Repository: https://github.com/Mr-KayZ/RTS-Extra-Docs
+  "Just the Docs on GitHub":
+    - "https://github.com/just-the-docs/just-the-docs"
 
 favicon_ico: "/assets/logo/dead_inside-black.ico"
 
