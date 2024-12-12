@@ -13,13 +13,13 @@ last_modified: 2024-10-12
 
 ## Current articles:
 
-* [Intel 13th and 14th CPUs - Overvoltage and oxidized vias](/docs/issues/Intel-13th-and-14th-bug)
-* [Lenovo Legion T5 prebuilt - DPC_WATCHDOG_VIOLATION issues](/docs/issues/Lenovo-Legion-T5-bug)
-* [AMD AM4 CPUs - Ryzen Memory Voltage bugs](/docs/issues/Ryzen-AM4-bug)
+* [Intel 13th and 14th CPUs - Overvoltage and oxidized vias](RTS-Extra-Docs/docs/issues/Intel-13th-and-14th-bug)
+* [Lenovo Legion T5 prebuilt - DPC_WATCHDOG_VIOLATION issues](RTS-Extra-Docs/docs/issues/Lenovo-Legion-T5-bug)
+* [AMD AM4 CPUs - Ryzen Memory Voltage bugs](RTS-Extra-Docs/docs/issues/Ryzen-AM4-bug)
 
 ## Personal Notes:
 
-* [SPECIFY Analysis - WHEA error records - CMCI_NOTIFY_TYPE_GUID](/docs/learning/WHEA-analysis-CMCI_NOTIFY_TYPE_GUID)
+* [SPECIFY Analysis - WHEA error records - CMCI_NOTIFY_TYPE_GUID](RTS-Extra-Docs/docs/learning/WHEA-analysis-CMCI_NOTIFY_TYPE_GUID)
 
 ---
 
