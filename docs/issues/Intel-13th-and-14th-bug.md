@@ -3,7 +3,7 @@ layout: default
 title: Intel 13th and 14th CPUs - Overvoltage and oxidized vias
 nav_exclude: false
 has_children: false
-parent: Issues and How to Solve them
+parent: Tech Issues and How to Solve them
 # grand_parent: 
 # has_toc: false
 search_exclude: false

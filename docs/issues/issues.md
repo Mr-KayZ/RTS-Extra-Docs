@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Issues and How to Solve them
+title: Tech Issues and How to Solve them
 nav_exclude: false
 nav_order: 1
 has_children: true

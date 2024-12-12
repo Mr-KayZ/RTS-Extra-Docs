@@ -3,7 +3,7 @@ layout: default
 title: AMD AM4 CPUs - Ryzen Memory Voltage bugs
 nav_exclude: false
 has_children: false
-parent: Issues and How to Solve them
+parent: Tech Issues and How to Solve them
 # grand_parent: 
 # has_toc: false
 search_exclude: false
@@ -45,11 +45,13 @@ You will need to go into BIOS and tweak voltage settings. Again, <u>tweaking vol
 Do note that different motherboards will have different BIOS's and layout so it may take some time looking for the correct menu. Once the correct menu has been found, adjust the voltages accordingly:
 - **CPU VCore** offset to `+50mV` or `+0.05V`
 - **VCORE SOC** offset to `+50mV` or `+0.05V`
-<sub>Note that for some BIOS's, such as Gigabyte's, you need to set the CPU VCore to Normal, and then set Dynamic VCore to the offset value. The same applies to VCORE SOC. This is the same as setting offsets.</sub>
+
+{: .note }
+Note that for some BIOS's, such as Gigabyte's, you need to set the **CPU VCore** to Normal, and then set **Dynamic VCore** to the offset value. The same applies to **VCORE SOC**. This is the same as setting offsets.
 
 ## Other potential Solutions
 
-Should in case the initial CPU VCore and VCORE SOC values does not help in fixing the issue, adjusting them to higher values of potentially `+70/80mV` or `+0.07/0.08V` could give better results.
+Should in case the initial **CPU VCore** and **VCORE SOC** values does not help in fixing the issue, adjusting them to higher values of potentially `+70/80mV` or `+0.07/0.08V` could give better results.
 
 You may also have to edit other values, including memory controller voltages directly. Tweaking these should help in stability:
 - **CPU VDDP/VDDG CCD** - Memory controller voltage, typical operation for DDR4 is `0.9-0.95V`.

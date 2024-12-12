@@ -1,28 +1,17 @@
 ---
-
 layout: default
-
-title: Homepage
-
+title: Home Page
 nav_exclude: false
-
-last_modified: 2024-10-12
+nav_order: 0
+has_children: false
+search_exclude: false
+last_modified_date: 2024-12-11
 
 ---
 # Welcome to my personal techsupport wiki!
 
-## Current articles:
-
-* [Intel 13th and 14th CPUs - Overvoltage and oxidized vias](RTS-Extra-Docs/docs/issues/Intel-13th-and-14th-bug)
-* [Lenovo Legion T5 prebuilt - DPC_WATCHDOG_VIOLATION issues](RTS-Extra-Docs/docs/issues/Lenovo-Legion-T5-bug)
-* [AMD AM4 CPUs - Ryzen Memory Voltage bugs](RTS-Extra-Docs/docs/issues/Ryzen-AM4-bug)
-
-## Personal Notes:
-
-* [SPECIFY Analysis - WHEA error records - CMCI_NOTIFY_TYPE_GUID](RTS-Extra-Docs/docs/learning/WHEA-analysis-CMCI_NOTIFY_TYPE_GUID)
-
+## <--- You can check out the list of all articles for this wiki on the right hand panel.
 ---
-
 ## Purpose of this Wiki
 
 Hello! This is a personal extension of the [r/techsupport wiki](https://rtech.support/) that explores more obscure and unknown tech issues and provides unique fixes beyond standard troubleshooting methods.
@@ -31,6 +20,17 @@ This wiki serves as a resource for solving rare and perplexing technical problem
 
 It also serves as a personal notes collection of which that allows me to quickly refer to issues and topics I would need further reading on (especially if not documented in the Wiki at the time of writing).
 
+---
+### Tech Issues and How to solve them:
+Contains information regarding niche tech issues and how to solve them.
+
+### Learning and Notes:
+Contains my personal notes for learning about different tech related stuff including, but not limited to:
+- WHEA analysis
+- How to read a Spec-ify report
+- Tools and extra links I use for troubleshooting
+
+---
 ## How can I contribute?
 
 If you wish to see more articles and potential fixes, feel free to reach out to me using the email [mrkayz.wiki@gmail.com](mailto:mrkayz.wiki@gmail.com) to give me tips on other current tech issues that require a unique way to solve them. I would gladly appreciate any information I can get!
