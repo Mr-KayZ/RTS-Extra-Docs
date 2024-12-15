@@ -15,7 +15,6 @@ last_modified_date: 2024-10-10
 {% include toc.md %}
 
 ## Background
-
 The issue with 13th and 14th gen Intel CPUs has been covered greatly by many tech youtubers. If you wish to learn more, I highly recommend watching GamersNexus's and Level1Tech's videos that go into deep details about what the issue is about and how it is impacting users:
 - [Intel has a Pretty Big Problem (youtube.com)](https://www.youtube.com/watch?v=QzHcrbT5D_Y)
 - [Intel's CPUs Are Failing, ft. Wendell of Level1 Techs (youtube.com)](https://www.youtube.com/watch?v=oAE4NWoyMZk)
@@ -43,7 +42,6 @@ Do note that Intel 12th gen CPUs, despite being on the same socket of LGA 1700, 
 
 ---
 ## Symptoms and Diagnosis
-
 - Frequent crashes stating an "Out of GPU memory" when playing Unreal Engine games, even on higher end graphics cards with plenty of VRAM.
 - Instability of the systems, and general crashes, BSODs with no clear description as to what is possibly causing the issue, etc.
 
@@ -62,7 +60,6 @@ To recheck if you have a failing CPU, after updating BIOS, run the following tes
 	- These methods are not as good the NVidia driver test but some form of testing is better than none at all.
 
 ## Known Solution
-
 - **Update BIOS immediately to microcode update 0x129 or higher.** This is the only known fix approved by Intel directly at the time of writing.
 
 After updating BIOS, follow the testing procedures outlined above to ensure that the CPU seems fine or works accordingly. If it fails in any of these tests, it may be possible your CPU already is physically damaged hardware wise, and the only way to fix that is to issue a RMA request directly to Intel.

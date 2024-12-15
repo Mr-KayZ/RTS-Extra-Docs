@@ -10,13 +10,17 @@ search_exclude: false
 last_modified_date: 2024-12-10
 ---
 # SPECIFY - WHEA error records - Corrected Machine Check Interrupt
+{: .no_toc }
 
+{% include toc.md %}
+
+## Specify has not caught the Machine Check Exceptions
 Suppose you encounter a WHEA in specify where there are no specific MCE records (Instead it states `CMCI_NOTIFY_TYPE_GUID` in the Notify type - This stands for **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
 
 For context, CMCI - Corrected Machine Check Interrupt - Means that the WHEA error was encountered by Windows, but was corrected accordingly. This is why the severity of the crash is not fatal but "Warning".
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png)
 
-This however does not mean there isn't an issue with the hardware. A WHEA error can still be a potential hardare problem after all.
+This however does not mean there isn't an issue with the hardware. A WHEA error can still be a potential hardware problem after all.
 
 ## Error Descriptors
 To do this, we analyze what the error packet specifically says. The specify report has multiple error descriptors split up into sections (in accordance with the error packets). Each section of the packet refers to a section in the Error Descriptors.
@@ -138,4 +142,4 @@ We can now translate the MCI status codes into the following:
 - MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code here: )
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
-Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the Ryzen Voltage bug, but also keep an eye out on which core/thread this is always occuring on. If its the same core/thread, you may also potentially be dealing with a fried core as well.
+Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the Ryzen Voltage bug, but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well.
