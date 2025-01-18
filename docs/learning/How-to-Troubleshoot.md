@@ -55,7 +55,7 @@ In other words, what makes a source reliable, and how can I trust it?
 {: .warning }
 > **Do not troubleshoot with AI "search engines"**
 > 
-> ChatGPT 4, Microsoft Copilot, Google Gemini, or any other AI tool should not be counted on for any form of support troubleshooting whatsoever. Google Gemini is now integrated into Google search, but you must not rely on just Gemini for answers. Select the sources directly and read properly so you can see if the sources are indeed what you are looking for.
+> ChatGPT 4, Microsoft Copilot, Google Gemini, or any other AI tool should not be counted on for any form of support when troubleshooting anything at all. Google Gemini is now integrated into Google search, but you must not rely on just Gemini for answers. Select the sources directly and read properly so you can see if the sources are indeed what you are looking for.
 > 
 > These AI models are LLMs - Large Language Models with a search engine built into them. Effectively they are designed to read what you have typed and do their own similar searches accordingly, and then summarize the answer. Sometimes its good, but sometimes "AI hallucinate" and make up stuff on the spot. It is best to recheck what sources these AI are getting their answers from (if any) and see if they really do contain the information you need. (This is why your teachers told you Wikipedia is not a source!)
 > 
