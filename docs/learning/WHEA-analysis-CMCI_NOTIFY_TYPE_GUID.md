@@ -139,7 +139,7 @@ Another thing to take note here is the fact that all of these values are little 
 We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD (`01` is Intel, `02` is AMD)
 - Processor Number - `11` (Thread 11, Core 5)
-- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code here: )
+- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code here: https://github.com/Mr-KayZ/WHEA-CE-Error/blob/main/wheamceerror.py)
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
 Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the Ryzen Voltage bug, but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well.

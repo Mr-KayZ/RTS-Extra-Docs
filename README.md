@@ -17,3 +17,16 @@ It also serves as a personal notes collection of which that allows me to quickly
 If you wish to see more articles and potential fixes, feel free to reach out to me using the email [mrkayz.wiki@gmail.com](mailto:mrkayz.wiki@gmail.com) to give me tips on other current tech issues that require a unique way to solve them. I would gladly appreciate any information I can get!
 
 If you have tech issues, please feel free to write up the issue in the reddit [TechSupport (reddit.com)](https://www.reddit.com/r/techsupport/). Otherwise, you can head to the live chat [Discord](https://discord.com/invite/2EDwzWa) to chat with helpers, including me!
+
+## Setting up repo and running it locally:
+Refer to https://github.com/just-the-docs/just-the-docs/blob/main/README.md for more information. Summary is as follows:
+
+- Ensure you have the following installed:
+    - Ruby - https://www.ruby-lang.org/en/downloads/
+        - Check Ruby version by running `ruby -v`.
+    - RubyGems - https://rubygems.org/pages/download
+        - Check Gems version by running `gem -v`
+    - GCC and Make (obsolete?) - https://gcc.gnu.org/install/ and https://www.gnu.org/software/make/
+        - Check versions using `gcc -v`,`g++ -v`, and `make -v`.
+- Ensure that dependancies are installed via running `bundle install` from root directory.
+- Run the site by running `bundle exec jekyll serve` from root directory.
