@@ -8,9 +8,9 @@ search_exclude: false
 last_modified_date: 2024-12-11
 
 ---
-# Welcome to my personal techsupport wiki/blog!
+# Welcome to my personal techsupport wiki!
 
-## <--- You can check out the list of all articles for this website on the right hand panel.
+## <--- You can check out the list of all articles for this wiki on the right hand panel.
 ---
 ## Purpose of this Wiki
 
@@ -18,21 +18,17 @@ Hello! This is a personal extension of the [r/techsupport wiki](https://rtech.s
 
 This wiki serves as a resource for solving rare and perplexing technical problems with innovative solutions. (Also because I can update this faster than the official r/techsupport wiki lol.)
 
-It also serves as a personal notes collection of which that allows me to quickly refer to issues and topics I would need further reading on (especially if not documented in the Wiki at the time of writing). Otherwise its my personal blog where I go and have my own opinions on things people most likely won't bother reading anyways.
+It also serves as a personal notes collection of which that allows me to quickly refer to issues and topics I would need further reading on (especially if not documented in the Wiki at the time of writing).
 
 ---
 ### Tech Issues and How to solve them:
 Contains information regarding niche tech issues and how to solve them.
- - Upcoming new issues
- - Older solved issues
- - Etc.
 
 ### Learning and Notes:
 Contains my personal notes for learning about different tech related stuff including, but not limited to:
 - WHEA analysis
 - How to read a Spec-ify report
 - Tools and extra links I use for troubleshooting
-- Etc.
 
 ---
 ## How can I contribute?
