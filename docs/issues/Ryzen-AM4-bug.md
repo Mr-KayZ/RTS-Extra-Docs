@@ -53,10 +53,6 @@ You may also have to edit other values, including memory controller voltages dir
 - **CPU VDDP/VDDG CCD** - Memory controller voltage, typical operation for DDR4 is `0.9-0.95V`.
 - **CPU VDD18** - To deal with infinity fabric. Set to `1.85V` if issues still persist. Raise this by `0.05V` increments to a maximum of `2V` if issues still occur with regards to stability.
 
-Another adjustment would be to enter the BIOS and locate the Load-Line Calibration (LLC) setting. Do note this may be called different things in different manufacturers (such as Asus, Gigabyte, MSI, etc.)
-- Adjust LLC to a higher level, such as High or Turbo. A higher LLC reduces Vdroop by making the voltages stable under load.
-- Test different levels until you find a setting that keeps the CPU stable without creating excessive voltages.
+Additionally, look into overclocking guides to see VCore voltage and VSOC. Sometimes some manufacturers set really low values even below the offsets, in which case you may manually have to change it. 
 
-![LLC in the BIOS](/RTS-Extra-Docs/assets/img/Ryzen-AM4-bug/LLC-in-bios.png)
-
-Additionally, look into overclocking guides to see VCore voltage and VSOC. Sometimes some manufacturers set really low values even below the offsets, in which case you may manually have to change it. For AM4, set both to `1.125V`, this is the known working values for most AM4 CPUs.
+For AM4, set both to `1.125V`, this is the known working values for most AM4 CPUs.
