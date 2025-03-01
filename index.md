@@ -5,10 +5,10 @@ nav_exclude: false
 nav_order: 0
 has_children: false
 search_exclude: false
-last_modified_date: 2024-12-11
+last_modified_date: 2025-03-01
 
 ---
-# Welcome to my personal techsupport wiki!
+# Welcome to my personal techsupport wiki/blog!
 
 ## <--- You can check out the list of all articles for this wiki on the right hand panel.
 ---
@@ -19,6 +19,8 @@ Hello! This is a personal extension of the [r/techsupport wiki](https://rtech.s
 This wiki serves as a resource for solving rare and perplexing technical problems with innovative solutions. (Also because I can update this faster than the official r/techsupport wiki lol.)
 
 It also serves as a personal notes collection of which that allows me to quickly refer to issues and topics I would need further reading on (especially if not documented in the Wiki at the time of writing).
+
+In addition, this will serve as my personal blog of sorts so you can view my totally valid opinions on subjects I definitely have a say on /s. Feel free to explore!
 
 ---
 ### Tech Issues and How to solve them:
