@@ -142,6 +142,11 @@ How I approach issues is with a classification system, with sub-classification o
 		  Otherwise, replacement of that hardware is the only fix here usually. If there's warranty present on the device, pursuing warranty via [RMA request](https://en.wikipedia.org/wiki/Return_merchandise_authorization) might be the go-to here.
 			- Again, these are very generic fixes and depending on the issue, you may have more steps/subclassifications to further identify what the issue is and apply the appropriate fix.
 
+Sometimes you can be completely wrong, and what appears to be a software issue was in fact a hardware issue, whose signs you have completely missed by hyper-focusing on what effectively is a red herring, or maybe an indication of a hardware fault manifesting itself as a software issue, etc. 
+
+When you feel like whatever you suggest or apply does not work, its best to take a step back and have a complete overview on what the original issue was, what the symptoms are, starting from the beginning again. 
+
+Keeping an open mind about issues is what makes you a better troubleshooting expert.
 ## Learning more about issues and computers
 The more help cases you go through, and the more you observe, the more patterns you begin to see with regards to issues, and see how each issue seem to manifest itself. Its very useful if you start by researching common tech issues, going through solved cases on Reddit, StackOverflow, Microsoft forums, etc., and seeing how issues are presented and how to diagnose them - The more you research the better.
 
