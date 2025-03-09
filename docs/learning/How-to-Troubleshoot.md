@@ -145,6 +145,9 @@ How I approach issues is with a classification system, with sub-classification o
 ## Learning more about issues and computers
 The more help cases you go through, and the more you observe, the more patterns you begin to see with regards to issues, and see how each issue seem to manifest itself. Its very useful if you start by researching common tech issues, going through solved cases on Reddit, StackOverflow, Microsoft forums, etc., and seeing how issues are presented and how to diagnose them - The more you research the better.
 
+One excellent resource out there are general IT glossaries that explain many different concepts and ideas extremely well. Simply searching up IT glossary in Google will yield multiple solid results. 
+
+I primarily utilize [Lenovo's glossary](https://www.lenovo.com/ca/en/glossary/) to explain concepts to me (ignore the constant ads if you can) and go through a lot of detail and information that even a beginner can understand. Do note that their wording can be a bit skewed with regards to how they constantly try to upsell stuff such as "Why NVidia DLSS is very important in gaming, and why you should have it too!", but apart from that the information on it is accurate and solid.
 ### The Hardware
 It also helps if you understand computer hardware and software as well, particularly how operating systems work, and how CPU interacts with RAM, GPU, etc. I personally would recommend learning about the hardware first, before moving onto software, as the software portion, especially operating systems, build upon hardware knowledge.
 
