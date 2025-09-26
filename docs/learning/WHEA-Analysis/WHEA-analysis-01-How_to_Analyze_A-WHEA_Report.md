@@ -57,7 +57,7 @@ The error header contains information which tells the OS and any logging tools h
 - Notify Type: GUID describing how the record was delivered (e.g., DEVICE_DRIVER_NOTIFY_TYPE_GUID for driver-reported faults).
 
 The most important part would be Severity and Notify Type. Notify Type can tell you more about what form of error was encountered by the system. There are 7 different standard notification types:
-- CMC_NOTIFY_TYPE_GUIDL: Explained below in "Processor errors".
+- CMC_NOTIFY_TYPE_GUID: Explained below in "Processor errors".
 - CPE_NOTIFY_TYPE_GUID: Indicates a platform-level error—external to the CPU—that was corrected in hardware or firmware. Informs Windows that the platform took care of the error and no software intervention is needed.
 - MCE_NOTIFY_TYPE_GUID: Explained below in "Processor errors".
 - PCIe_NOTIFY_TYPE_GUID: Used when a device or root port reports an Advanced Error Reporting (AER) event via PCIe—corrected or uncorrected. See more below in "PCI Express/PCIe errors".
