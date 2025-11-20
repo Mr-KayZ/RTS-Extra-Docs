@@ -16,7 +16,7 @@ last_modified_date: 2024-12-10
 A once famous Doctor Cox said most brilliantly in a show: 
 
 {: .quote }
-"Whatever sticks, that's the right dosage" 
+"Whatever sticks, that's the right dosage." 
 
 This line came from Scrubs S01E01 - Possibly one of my most favorite TV shows out there (a must watch if you are looking for a new show to binge). The same idea applies to troubleshooting as well. 
 
@@ -40,7 +40,7 @@ It goes without saying your entry to troubleshooting stuff would begin with Goog
 It never hurts to learn more, and its better to take your time learning more about something before giving the fix than to immediately assume something else and state that's what the problem is. Keep an open mind, and don't jump to conclusions. Another famous quote applies here :
 
 {: .quote }
-"It is dangerous to assume because you might make an “ass” out of “u” and “me”.
+"It is dangerous to assume because you might make an “ass” out of “u” and “me”."
 
 The last thing you want is to give advice that causes issues to the user you are trying to help, such as replacing a CPU or Motherboard to fix a issue when in reality the issue was with the PSU all along. Sure the user could have done a warranty so financially it won't affect them, but the headache and mental stress incurred by a warranty replacement is not something anyone should go through for every single minor problem. (Ok PSU being faulty is a problem but you know what I mean!)
 
@@ -97,6 +97,7 @@ This small list are a group of youtubers I watch regularly to get better informe
 
 {: .important }
 **When relying on a youtuber for a source, always refer to their sources and check other people's opinions and data on the matter as well. A single source is not good enough, especially if said youtuber may have taken information out of context.**
+
 ### The bad sources
 Naturally we will have to cover this section too. Generally saying, a bad source of information or review are any that are trying to sell you a product. While sometimes the fixes and troubleshooting steps provided in them sometimes are good, most of the time these are actually copy pasted from other reputable forums and statements from more reputable sources, and are utilized as a front to get you to "Download their product" which apparently can solve every problem under the sun - this is clickbait and false advertisement.
 
@@ -120,6 +121,7 @@ That being said, it isn't a bad idea to try the other generic fixes provided by 
 To troubleshoot, one must get all the information necessary to proceed. This means asking questions about everything - how long they had the issue for, what the hardware is like, hardware specifications (even manufacturer numbers might come into effect here depending on the issue), warranty status on the product, is it a prebuilt or not, etc.
 
 With all these questions, you build a mental picture of the issue at hand, as well as the user's capability to answer such requests for information appropriately.
+
 #### <u>Gauging the troubleshooting skill of the user</u>
 Remember that not everyone you speak to might be well versed in electronics and hardware as you might be. You can go on about motherboard VSOC voltages, and the end user would be completely confused as they might not even understand what a motherboard is. For remote based tech support, this rings even more true for certain situations.
 
@@ -133,7 +135,7 @@ Ask as many questions related to the issue as you can so you can identify what t
 How I approach issues is with a classification system, with sub-classification of issues depending on the information I can get out of the user. My classification of issues goes something like this:
 
 - Try to identify if this is a hardware or software issue.
-	- If Software, try to identify what kind of software issue it is, driver or kernel or whatnot.
+	- If software, try to identify what kind of software issue it is, driver or kernel or whatnot.
 		- Try to then search if there's any potential fix for this issue. For drivers you try to reinstall the drivers from the motherboard's page or product manufacturer's website. If kernel issue, try to run DISM/SFC and hope that works, or perhaps attempt a in-place upgrade/reinstall to see if that might aid the user.
 			- Note that these are very generic fixes and depending on the issue, you may have more steps/subclassifications to further identify what the issue is and apply the appropriate fix.
 	- If hardware, try to identify what faulting hardware is causing the problem, whether that is by analyzing WHEA reports, or of a certain piece of the PC is non functional, such as no display to the monitor (which you can use this awesome guide to try and fix it [here](https://rtech.support/guides/no-image-troubleshooting/).)
@@ -146,13 +148,15 @@ Sometimes you can be completely wrong, and what appears to be a software issue w
 
 When you feel like whatever you suggest or apply does not work, its best to take a step back and have a complete overview on what the original issue was, what the symptoms are, starting from the beginning again. 
 
-Keeping an open mind about issues is what makes you a better troubleshooting expert.
+**Keeping an open mind about issues is what makes you a better troubleshooting expert.**
+
 ## Learning more about issues and computers
 The more help cases you go through, and the more you observe, the more patterns you begin to see with regards to issues, and see how each issue seem to manifest itself. Its very useful if you start by researching common tech issues, going through solved cases on Reddit, StackOverflow, Microsoft forums, etc., and seeing how issues are presented and how to diagnose them - The more you research the better.
 
 One excellent resource out there are general IT glossaries that explain many different concepts and ideas extremely well. Simply searching up IT glossary in Google will yield multiple solid results. 
 
 I primarily utilize [Lenovo's glossary](https://www.lenovo.com/ca/en/glossary/) to explain concepts to me (ignore the constant ads if you can) and go through a lot of detail and information that even a beginner can understand. Do note that their wording can be a bit skewed with regards to how they constantly try to upsell stuff such as "Why NVidia DLSS is very important in gaming, and why you should have it too!", but apart from that the information on it is accurate and solid.
+
 ### The Hardware
 It also helps if you understand computer hardware and software as well, particularly how operating systems work, and how CPU interacts with RAM, GPU, etc. I personally would recommend learning about the hardware first, before moving onto software, as the software portion, especially operating systems, build upon hardware knowledge.
 
@@ -161,12 +165,14 @@ One of the better starting points for hardware would be learning about the main 
 What I would do later is search up these individual components and see how those components work, such as "How does a CPU work" after learning the general importance of a computer, and from there, "How does an ALU work", or "How does cache work", "What's the difference between L1, L2, and L3 cache", etc. - By learning about these individual components within individual components, you can get a better understanding of how a computer works in general, grounding your knowledge even more.
 
 Remember, don't hesitate to search anything you do not understand. Google is always the first and best tool out there after all.
+
 ### The Firmware
 The firmware of any hardware can be described as the "software to run the hardware". All modern electronic components, be it mice, keyboards, motherboards, etc. contain microchips that can do so many different functions, from displaying RGB based on the user's taste, to accept button inputs to change the functionality of the device (such as changing the DPI speed of the mouse), and so much more.
 
 All of these microchips contain code within them that allows users to run these customization tools and whatnot on these devices, which is referred to as firmware. Firmware programming is a complex thing by itself, and often requires knowledge of the circuitry of the device in question too to make sense of how the firmware even works. More often than not, it can get really complex really quickly.
 
 For most end users, firmware fixes are something made by developers, which only the end user needs to apply. If there's a firmware update, most of the driver applications for these hardware products have firmware update software which enables you to update the firmware of these device. Sometimes these firmware can be buggy, which would require a downgrade of the firmware instead.
+
 ### The Operating System
 After learning a bit about the hardware and general components, its time to tackle the more complicated stuff: The software. More specifically, the operating system as a whole, and how an OS functions. This is very far more complex than the average software, but allows you to see beyond normal software and understand deeper computer issues as well once you understand how an operating system works.
 

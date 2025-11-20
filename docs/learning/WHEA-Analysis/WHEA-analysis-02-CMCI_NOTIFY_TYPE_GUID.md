@@ -1,6 +1,6 @@
 ---
 layout: default
-title: WHEA-Analysis - Corrected Machine Check Interrupt
+title: WHEA-Analysis - 02 - Corrected Machine Check Interrupt
 nav_exclude: false
 has_children: false
 parent: Learning and Notes
@@ -40,7 +40,7 @@ You can see in Sections `A`, `B` and `D` of this particular packet, the section 
 You may notice there is one section here which contains a "UNKNOWN GUID", section C. The GUID states `8a1e1d01-42f9-4557-9c33-565e5cc3f7e8`, which Googling reveals it is a [WHEA_XPF_MCA_SECTION](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_xpf_mca_section). This is a machine check exception error section structure, meaning we can find more details regarding it. This is exactly what we need out of this 
 
 The section structure is as follows:
-```C++
+```cpp
 typedef struct _WHEA_XPF_MCA_SECTION {
   ULONG             VersionNumber;
   WHEA_CPU_VENDOR   CpuVendor;
@@ -134,12 +134,13 @@ We can ignore the rest here:
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 ```
 
-Another thing to take note here is the fact that all of these values are little endian, so the bytes are "backwards". In this case, `03 00 00 00` is read `00 00 00 03`. `12 34 56 78` would be read `78 56 34 12`, etc.
+{: .note }
+All of these values are little endian, so the bytes are "backwards". In this case, `03 00 00 00` is read `00 00 00 03`. `12 34 56 78` would be read `78 56 34 12`, etc.
 
 We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD (`01` is Intel, `02` is AMD)
 - Processor Number - `11` (Thread 11, Core 5)
-- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code here: https://github.com/Mr-KayZ/WHEA-CE-Error/blob/main/wheamceerror.py)
+- MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code [here!](https://github.com/Mr-KayZ/WHEA-CE-Error/blob/main/wheamceerror.py))
 ![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
 
-Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the Ryzen Voltage bug, but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well.
+Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the [Ryzen Voltage bug](/RTS-Extra-Docs/docs/issues/Ryzen-AM4-bug.md), but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well. For further testing, consider running [OCCT](https://rtech.support/guides/how-to-use-occt/) and observing the results.
