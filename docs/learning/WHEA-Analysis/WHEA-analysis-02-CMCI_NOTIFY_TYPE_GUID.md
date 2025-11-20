@@ -1,6 +1,6 @@
 ---
 layout: default
-title: WHEA-Analysis - Corrected Machine Check Interrupt
+title: WHEA-Analysis - 02 - Corrected Machine Check Interrupt
 nav_exclude: false
 has_children: false
 parent: Learning and Notes
