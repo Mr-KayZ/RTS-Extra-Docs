@@ -9,7 +9,7 @@ parent: Tech Issues and How to Solve them
 search_exclude: false
 last_modified_date: 2025-11-20
 ---
-# Firmware Bugs in NVMe SSDs with HMB - Memory leaks
+# DWM stutter and lag on Chromium based Services
 {: .no_toc }
 
 {% include toc.md %}
