@@ -135,7 +135,7 @@ We can ignore the rest here:
 ```
 
 {: .note }
-All of these values are little endian, so the bytes are "backwards". In this case, `03 00 00 00` is read `00 00 00 03`. `12 34 56 78` would be read `78 56 34 12`, etc.
+> All of these values are little endian, so the bytes are "backwards". In this case, `03 00 00 00` is read `00 00 00 03`. `12 34 56 78` would be read `78 56 34 12`, etc.
 
 We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD (`01` is Intel, `02` is AMD)

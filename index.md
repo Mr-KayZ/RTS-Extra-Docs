@@ -11,6 +11,9 @@ last_modified_date: 2025-03-01
 # Welcome to my personal techsupport wiki/blog!
 
 ## <--- You can check out the list of all articles for this wiki on the right hand panel.
+
+Or if you are on mobile, access the list from the top right by pressing the "hamburger menu" button!
+
 ---
 ## Purpose of this Wiki
 
@@ -29,7 +32,7 @@ Contains information regarding niche tech issues and how to solve them.
 ### Learning and Notes:
 Contains my personal notes for learning about different tech related stuff including, but not limited to:
 - WHEA analysis
-- How to read a Spec-ify report
+- How to troubleshoot effectively and efficiently
 - Tools and extra links I use for troubleshooting
 
 ---

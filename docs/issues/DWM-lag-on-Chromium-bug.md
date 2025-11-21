@@ -57,8 +57,25 @@ That back-and-forth changes presentation timing, can drop or duplicate frames du
 ## Potential Solutions
 The key idea to potentially fix this is to disable DWM's minimum-FPS requirement for assigning swap chains to overlay planes, making the low-FPS chains likelier to remain on overlays. This will involve tinkering with the registry.
 
+### Method 1: Saving as a .reg file
+1. Open up notepad.
+2. Copy and paste the following into the note file:
+
+   ```
+   Windows Registry Editor Version 5.00
+
+   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM]
+   "OverlayMinFPS"=dword:00000000
+   ```
+3. Save this `.txt` file as a `.reg` file by simply renaming the extension. Preferably name it as `DWM_Fix.reg`.
+4. Run the `DWM_Fix.reg` file. You may have a UAC (User Account Control) dialogue popup.
+
+After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
+
+### Method 2: Using Regedit
+
 {: .warning }
-> *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows) (Unless you have backed the registry. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.)*
+> *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows), unless you have backed the registry or have a System Restore point. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.*
 
 Open up registry, head to the following registry hive: 
 - `HKLM\SOFTWARE\Microsoft\Windows\DWM`

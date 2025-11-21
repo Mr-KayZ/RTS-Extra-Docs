@@ -34,7 +34,7 @@ The HMB driver operates as usual, but the SSD firmware can have bugs. This can c
 This cycle continues, resulting in a memory leak. To be clear, this is not a fault of Windows, the HMB driver is working as intended. This is a fault of the SSD firmware failing to cache the items from DRAM.
 
 {: .note }
-Fun fact, this was what was causing the crashes in the original Western Digital drives for Windows 24H2, until WD addressed this by issuing an emergency update for the firmware of the SSD.
+> Fun fact, this was what was causing the crashes in the original Western Digital drives for Windows 24H2, until WD addressed this by issuing an emergency update for the firmware of the SSD.
 
 ---
 ## Symptoms and Diagnosis
@@ -52,8 +52,28 @@ The main fix is to look for a firmware update for the SSD by downloading the acc
 
 Alternatively if a firmware update is not present, and you have confirmed that the HMB driver messing up with the faulty NVMe firmware to be the cause of the crashes (by reconfirming with forum posts), you may proceed to disable HMB directly by a registry edit.
 
+{: .important }
+> *Doing this will result in DRAM-less drives in your system to operate at slower speeds, causing performance loss, so update the firmware once available to regain normal speeds with HMB enabled (i.e. delete the below registry key once you update firmware).*
+
+### Method 1: Saving as a .reg file
+1. Open up notepad.
+2. Copy and paste the following into the note file:
+
+   ```
+   Windows Registry Editor Version 5.00
+
+   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort]
+   "HmbAllocationPolicy"=qword:0000000000000000
+   ```
+3. Save this `.txt` file as a `.reg` file by simply renaming the extension. Preferably name it as `HMB_Disable_.reg`.
+4. Run the `DWM_Fix.reg` file. You may have a UAC (User Account Control) dialogue popup.
+
+Once that is done, reboot the computer to see the changes apply.
+
+### Method 2: Using Regedit
+
 {: .warning }
-> *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows) (Unless you have backed the registry. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.)*
+> *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows), unless you have backed the registry or have a System Restore point. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.*
 
 Open up registry, head to the following registry hive:
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort`
@@ -62,5 +82,4 @@ In this registry hive, add a new `QWORD(x64)` entry:
 - Name: `HmbAllocationPolicy`
 - Value: `0` (Default)
 
-{: .important }
-*Doing this will result in DRAM-less drives in your system to operate at slower speeds, causing performance loss, so update the firmware once available to regain normal speeds with HMB enabled (i.e. delete the above registry key once you update firmware).*
+Once that is done, reboot the computer to see the changes apply.

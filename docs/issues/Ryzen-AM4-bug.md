@@ -18,7 +18,7 @@ last_modified_date: 2024-12-10
 This bug is quite common amongst users especially after the Ryzen 5000 X3D CPUs came out. The bug in question mainly deals with users crashing when the PC is at idle, not under load. This is mainly due to the updated BIOS's incorrectly sending too low voltages to the memory controller, causing it to make incorrect decisions and mishandles the memory, and therefore crashes the system.
 
 {: .note }
-Theoretically a BIOS update should fix it, but in case it does not, a simple slight overclock is capable of handling this issue. If issues still persist, you may have to go through overclocking guides for stability and implement the one that's best suited for your CPU.
+> Theoretically a BIOS update should fix it, but in case it does not, a simple slight overclock is capable of handling this issue. If issues still persist, you may have to go through overclocking guides for stability and implement the one that's best suited for your CPU.
 
 Do note to take care when altering voltages to not change other values in the BIOS as adjusting the clocks and voltages of any component can cause system instability or irreversible damage if done incorrectly, especially if you decide to do your own thing and not follow the guidelines.
 
@@ -44,7 +44,7 @@ Do note that different motherboards will have different BIOS's and layout so it 
 - **VCORE SOC** offset to `+50mV` or `+0.05V`
 
 {: .note }
-Note that for some BIOS's, such as Gigabyte's, you need to set the **CPU VCore** to Normal, and then set **Dynamic VCore** to the offset value. The same applies to **VCORE SOC**. This is the same as setting offsets.
+> Note that for some BIOS's, such as Gigabyte's, you need to set the **CPU VCore** to Normal, and then set **Dynamic VCore** to the offset value. The same applies to **VCORE SOC**. This is the same as setting offsets.
 
 ## Other potential Solutions
 Should in case the initial **CPU VCore** and **VCORE SOC** values does not help in fixing the issue, adjusting them to higher values of potentially `+70/80mV` or `+0.07/0.08V` could give better results.
