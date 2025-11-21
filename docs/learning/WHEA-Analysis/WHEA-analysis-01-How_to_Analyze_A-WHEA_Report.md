@@ -4,7 +4,7 @@ title: WHEA-Analysis - 01 - How to analyze a WHEA report
 nav_exclude: false
 has_children: false
 parent: Learning and Notes
-# grand_parent: 
+# grand_parent:
 # has_toc: false
 search_exclude: false
 last_modified_date: 2025-11-20

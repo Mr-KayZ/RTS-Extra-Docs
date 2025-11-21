@@ -4,7 +4,7 @@ title: WHEA-Analysis - 02 - Corrected Machine Check Interrupt
 nav_exclude: false
 has_children: false
 parent: Learning and Notes
-# grand_parent: 
+# grand_parent:
 # has_toc: false
 search_exclude: false
 last_modified_date: 2024-12-10
