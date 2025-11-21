@@ -15,6 +15,9 @@ favicon_ico: "/assets/logo/dead_inside-black.ico"
 
 color_scheme: dark
 
+plugins:
+  - just-the-docs
+
 #nav_enabled: true
 #heading_anchors: true
 
