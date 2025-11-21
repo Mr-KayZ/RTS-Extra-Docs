@@ -47,20 +47,13 @@ Do note that Intel 12th gen CPUs, despite being on the same socket of LGA 1700, 
 
 In short, if you have a 13th or 14th gen Intel CPU, and not have an updated BIOS, any general instability issues is most likely caused by the misbehaving BIOS.
 
-To recheck if you have a failing CPU, after updating BIOS, run the following tests:
-- If you have an NVidia GPU:
-	- Reinstall the NVidia driver at least ten times, which following the procedures for a [DDU](https://rtech.support/docs/factoids/ddu.html) every time.
-	- If the test fails during any one of these installations, this means the CPU is potentially faulty and you may need to issue an [RMA request with Intel](https://www.intel.com/content/www/us/en/support/articles/000024255/processors.html).
-	- This is because NVidia drivers during installation utilize lots of decompression, and is in fact ideal for general purpose troubleshooting. Other advanced decompression methods exist, but NVidia's reinstallation method has been shown to work the best so far.
-- If you do not have an NVidia GPU (AMD or Intel GPU):
-	- You will need to run multiple different CPU tests including:
-		- Prime95 for 2 hours (by following our [HWinfo logging](https://rtech.support/docs/guides/hwinfo.html) guide, also ensure to log with HWinfo as well).
-		- [Cinebench R23](https://www.guru3d.com/download/download-maxon-cinebench-r23/) for 2 hours.
-		- Play Unreal Engine games, particularly Unreal Engine 5 games.
-	- These methods are not as good the NVidia driver test but some form of testing is better than none at all.
+In order to test for a potentially faulty processor, utilize Intel's official Processor test tool from [here](https://www.intel.com/content/www/us/en/download/15951/intel-processor-diagnostic-tool.html). Intel utilizes a variant of this internally to approve or disapprove RMAs based on faulty processors.
+
+{: .note }
+Sometimes this test tool may pass despite the processor internally actually having an issue. According to numerous sources from several different forums, it is recommended to **run the test tool at least 3-5 times** to be absolutely sure of a faulty processor.
 
 ## Known Solution
-- **Update BIOS immediately to microcode update 0x129 or higher.** This is the only known fix approved by Intel directly at the time of writing.
+- **Update BIOS immediately to microcode update `0x129` or the improved `0x12B` or even higher.** This is the only known fix approved by Intel directly at the time of writing.
 
 After updating BIOS, follow the testing procedures outlined above to ensure that the CPU seems fine or works accordingly. If it fails in any of these tests, it may be possible your CPU already is physically damaged hardware wise, and the only way to fix that is to issue a RMA request directly to Intel.
 
