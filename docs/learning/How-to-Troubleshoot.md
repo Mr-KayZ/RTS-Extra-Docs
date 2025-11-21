@@ -16,7 +16,7 @@ last_modified_date: 2024-12-10
 A once famous Doctor Cox said most brilliantly in a show: 
 
 {: .quote }
-"Whatever sticks, that's the right dosage." 
+> "Whatever sticks, that's the right dosage." 
 
 This line came from Scrubs S01E01 - Possibly one of my most favorite TV shows out there (a must watch if you are looking for a new show to binge). The same idea applies to troubleshooting as well. 
 
@@ -40,12 +40,12 @@ It goes without saying your entry to troubleshooting stuff would begin with Goog
 It never hurts to learn more, and its better to take your time learning more about something before giving the fix than to immediately assume something else and state that's what the problem is. Keep an open mind, and don't jump to conclusions. Another famous quote applies here :
 
 {: .quote }
-"It is dangerous to assume because you might make an “ass” out of “u” and “me”."
+> "It is dangerous to assume because you might make an “ass” out of “u” and “me”."
 
 The last thing you want is to give advice that causes issues to the user you are trying to help, such as replacing a CPU or Motherboard to fix a issue when in reality the issue was with the PSU all along. Sure the user could have done a warranty so financially it won't affect them, but the headache and mental stress incurred by a warranty replacement is not something anyone should go through for every single minor problem. (Ok PSU being faulty is a problem but you know what I mean!)
 
 {: .important }
-**Take your time and slowly get to the answer. Don't rush to help someone, analyze everything possible and take into account as much things as possible before coming to a conclusion.**
+> **Take your time and slowly get to the answer. Don't rush to help someone, analyze everything possible and take into account as much things as possible before coming to a conclusion.**
 
 ### Good sources and bad sources for information
 Naturally, there are multiple sources of information. Some are reliable, while others, well, not so much. Some are outright scams, trying to get you to download their snake oil products, if not worse. This raises the question: How can I tell if my source is trustworthy? 
@@ -96,7 +96,7 @@ This small list are a group of youtubers I watch regularly to get better informe
 > The same is true for any YouTuber actually. Don't just blindly trust everything everyone is saying without proper sources backing them up.
 
 {: .important }
-**When relying on a youtuber for a source, always refer to their sources and check other people's opinions and data on the matter as well. A single source is not good enough, especially if said youtuber may have taken information out of context.**
+> **When relying on a youtuber for a source, always refer to their sources and check other people's opinions and data on the matter as well. A single source is not good enough, especially if said youtuber may have taken information out of context.**
 
 ### The bad sources
 Naturally we will have to cover this section too. Generally saying, a bad source of information or review are any that are trying to sell you a product. While sometimes the fixes and troubleshooting steps provided in them sometimes are good, most of the time these are actually copy pasted from other reputable forums and statements from more reputable sources, and are utilized as a front to get you to "Download their product" which apparently can solve every problem under the sun - this is clickbait and false advertisement.
