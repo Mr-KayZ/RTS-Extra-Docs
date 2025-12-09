@@ -27,7 +27,7 @@ To do this, we analyze what the error packet specifically says. The specify repo
 
 ### Error Descriptor Sections
 In this example, we have 4 sections A, B, C, D, corresponding to the 4 sections represented in the error packet:
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png)
+![../../../assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png](../../../assets/img/WHEA_Analysis/WHEA_Error_Descriptor.png)
 
 One way to tell one section from another is that all sections start with offset `0x00`. This is true for all offsets present in the Error packet. Each error descriptor has their own details, mainly the section type. The section type depicts what GUID the error packet belongs to so it can be identified accordingly.
 
@@ -141,6 +141,6 @@ We can now translate the MCI status codes into the following:
 - CPU Vendor - AMD (`01` is Intel, `02` is AMD)
 - Processor Number - `11` (Thread 11, Core 5)
 - MCI status - `01 35` - Memory Error - (After running `wheaceerror.py` - You can download the code [here!](https://github.com/Mr-KayZ/WHEA-CE-Error/blob/main/wheamceerror.py))
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/wheamcerror_python.png)
+![../../../assets/img/WHEA_Analysis/wheamcerror_python.png](../../../assets/img/WHEA_Analysis/wheamcerror_python.png)
 
-Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the [Ryzen Voltage bug](/RTS-Extra-Docs/docs/issues/Ryzen-AM4-bug.md), but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well. For further testing, consider running [OCCT](https://rtech.support/guides/how-to-use-occt/) and observing the results.
+Considering all other surrounding errors, this could be a memory controller level error too. But this is enough to tell us all the details for now. We can assume this most likely is due to the [Ryzen Voltage bug](../../../docs/issues/Ryzen-AM4-bug.md), but also keep an eye out on which core/thread this is always occurring on. If its the same core/thread, you may also potentially be dealing with a fried core as well. For further testing, consider running [OCCT](https://rtech.support/guides/how-to-use-occt/) and observing the results.

@@ -15,18 +15,18 @@ last_modified_date: 2025-11-20
 {% include toc.md %}
 
 ## What is WHEA?
-WHEA stands for **Windows Hardware Error Architecture**. It is a framework in Windows that allows the OS (in this case Windows) handle hardware errors, whether they are caused by faulty firmware or faulty hardware. It has the capability to detect, report and even in some cases recover from hardware malfunctions (an example of which is thoroughly discussed in [how to analyze a CMCI WHEA error](/RTS-Extra-Docs/docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID)).
+WHEA stands for **Windows Hardware Error Architecture**. It is a framework in Windows that allows the OS (in this case Windows) handle hardware errors, whether they are caused by faulty firmware or faulty hardware. It has the capability to detect, report and even in some cases recover from hardware malfunctions (an example of which is thoroughly discussed in [how to analyze a CMCI WHEA error](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID)).
 
 The WHEA was introduced in November 2006 with the release of Windows Vista to properly standardize a unified mechanism to handle hardware errors. Previously Windows used to utilize platform specific mechanisms to detect and report hardware errors, some of which were not even enforced by vendors and thus when those components did fail, the only way to troubleshoot was via [breadboarding](https://rtech.support/factoids/breadboarding/).
 
 ## WHEA error analysis
 WHEA errors can manifest itself in numerous ways. The way which most people usually encounter a WHEA error (or see it for the first time) usually is in a BSOD event ([Blue Screen of Death](https://en.wikipedia.org/wiki/Blue_screen_of_death)). Such errors occur because the system threw a hardware error so severe, the stability of the system itself is compromised and the OS crashes, presenting the user with a following error screen:
 
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/BSOD_WHEA.jpg](/RTS-Extra-Docs/assets/img/WHEA_Analysis/BSOD_WHEA.jpg)
+![../../../assets/img/WHEA_Analysis/BSOD_WHEA.jpg](../../../assets/img/WHEA_Analysis/BSOD_WHEA.jpg)
 
 Other times, most users may not even be aware that there are WHEA errors being reported by the system until it manifests itself in a different way, such as WiFi intermittently cutting out due to a failing WiFi adapter, or maybe the GPU glitching and presenting artifacts on screen. Such errors aren't system critical usually (unless they break the driver in such a way which errors out kernel space) and therefore BSODs won't occur to notify the user that a hardware is faulty. The only way to find these errors is by going through Event Viewer, where all non-critical WHEA errors or "corrected" WHEA errors are reported.
 
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/EventViewer_WHEA.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/EventViewer_WHEA.png)
+![../../../assets/img/WHEA_Analysis/EventViewer_WHEA.png](../../../assets/img/WHEA_Analysis/EventViewer_WHEA.png)
 
 {: .info }
 > For the purposes of this guide, we will be analyzing WHEA errors via a tool known as Specify. Specify is a snapshot viewer, as in it collects data from the system it's running on and then passes all this data to a website, [spec-ify.com](https://spec-ify.com/), which presents data in a structured way allowing users to view the status of their machines, or aid tech support agents in analyzing systems and figuring out what's wrong with them or general checkup.
@@ -73,7 +73,7 @@ The [WHEA_ERROR_RECORD_SECTION_DESCRIPTOR](https://learn.microsoft.com/en-us/win
 This is the raw data and text for the whole error packet containing the error header, error descriptor, and so on. This can be a bit daunting to read on first glance, but know that it's split up into neat sections that can enable a user to manually review the WHEA error section directly, especially if error descriptors point to something like a PCIe device but doesn't explicitly mention what device it is that's causing the issue.
 
 {: .info }
-> I have explained how to read the error packets in [WHEA-Analysis - Corrected Machine Check Interrupt - Error Descriptors](/RTS-Extra-Docs/docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID#error-descriptors) which you can refer to in order to read the error packets properly, but for devices normally you can also read the ASCII translation of the error descriptors on the side without having to fully analyze it, which normally will contain the name of the faulting device usually.
+> I have explained how to read the error packets in [WHEA-Analysis - Corrected Machine Check Interrupt - Error Descriptors](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID#error-descriptors) which you can refer to in order to read the error packets properly, but for devices normally you can also read the ASCII translation of the error descriptors on the side without having to fully analyze it, which normally will contain the name of the faulting device usually.
 
 ## Types
 There are numerous types of WHEA error types, of which the full examples of all different types can be found in [Microsoft documentation](https://learn.microsoft.com/en-us/windows-hardware/drivers/whea/) (good luck). This goes into deep details, but for our purposes, that will serve as further reading.
@@ -105,12 +105,12 @@ Machine Check Errors (MCE) are basically an uncorrected error that is sent to th
 CMCI stands for Corrected Machine Check Interrupt and is a mechanism used by the processor to report hardware errors to the operating system. Unlike an uncorrectable WHEA error, which causes a system crash, a corrected error means the system was able to fix the problem and continue running. This is why most CMCIs are not "Fatal" but "Warning".
 
 {: .note }
-> More information on how to decipher these can be found in [WHEA-Analysis - Corrected Machine Check Interrupt](/RTS-Extra-Docs/docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
+> More information on how to decipher these can be found in [WHEA-Analysis - Corrected Machine Check Interrupt](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
 
 #### <u>Corrected Machine Checks (CMC)</u>
 A CMC is a machine check error that the CPU’s Machine Check Architecture (MCA) hardware detected and successfully recovered or corrected. It is delivered via the [MCA recovery path](https://www.intel.com/content/www/us/en/developer/articles/technical/new-reliability-availability-and-serviceability-ras-features-in-the-intel-xeon-processor.html), so the OS logs it as “corrected” without halting execution.
 
-To translate CMCs, in case they do not provide a usual MCE in the error descriptors which are found in the error descriptors, you will have to resort to going through the error descriptors manually and deciphering the MCE yourself, and its the same exact way as how you would treat a normal [CMCI error](/RTS-Extra-Docs/docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID.md).
+To translate CMCs, in case they do not provide a usual MCE in the error descriptors which are found in the error descriptors, you will have to resort to going through the error descriptors manually and deciphering the MCE yourself, and its the same exact way as how you would treat a normal [CMCI error](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID.md).
 
 The main difference between a CMC and a CMCI is the fact that CMC is the generic ACPI-based signal for every corrected machine check event. It relies on the platform firmware or ACPI methods to funnel error reports into Windows via SCI/NMI. In contrast, CMCI is a hardware-accelerated path: once you program a threshold in the CPU registers, the processor takes care of counting correctable errors and only interrupts the OS when that threshold is hit. This reduces OS overhead and latency.
 
@@ -124,7 +124,7 @@ Multi-bit or uncorrectable events require immediate hardware isolation or replac
 ### PCI Express/PCIe errors
 In Specify, they will appear in the "PCI WHEA Errors" section, underneath "Unexpected Shutdowns". Here, you will see Vendor ID and Device ID, and often the device name (if identified). In the event it is not identified, search up Device ID and Vendor IDs in a PCI lookup tool, such as [Device Hunt](https://devicehunt.com), or [Linux Hardware](https://linux-hardware.org/?view=search) (Linux Hardware often provides more information about the driver in question).
 
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/EventViewer_WHEA.png](/RTS-Extra-Docs/assets/img/WHEA_Analysis/PCI_WHEA_Errors.png)
+![../../../assets/img/WHEA_Analysis/EventViewer_WHEA.png](../../../assets/img/WHEA_Analysis/PCI_WHEA_Errors.png)
 
 PCIe WHEA errors are hardware issues on a computer's PCI Express bus that are logged by the Windows Hardware Error Architecture (WHEA). These can cause performance problems, system instability, and even Blue Screens of Death (BSODs). There can be numerous reasons for a PCIe WHEA event to occur, including:
 - **Outdated or corrupt drivers**: Incorrect or outdated chipset or device drivers can cause communication errors on the PCIe bus.
@@ -180,7 +180,7 @@ Device driver errors will be in the form of `WHEA_DEVICE_DRIVER_DESCRIPTOR` (Dri
 ### Generic hardware errors
 WHEA’s generic hardware error reporting covers faults that don’t fit predefined categories (CPU, memory, PCIe, etc.), providing a unified, extensible error record format so the OS and management tools can capture, store, and act on otherwise uncategorized hardware faults.
 
-These can be quite hard to diagnose directly, and may involve analysis of the error packets directly with manual decoding, similar to how its done for [WHEA-Analysis - Corrected Machine Check Interrupt](/RTS-Extra-Docs/docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
+These can be quite hard to diagnose directly, and may involve analysis of the error packets directly with manual decoding, similar to how its done for [WHEA-Analysis - Corrected Machine Check Interrupt](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
 
 Normally in the form of `WHEA_GENERIC_ERROR_DESCRIPTOR` (Unknown generic hardware error). If you have just this and no other types WHEA reports or dumps to go on with, and manual decoding/analysis is not possible, you basically are in uncharted territory and may have to even resort to going through event viewer and praying that you find something that's akin to anything resembling a potential lead as to what is failing. Otherwise toss the whole suite of hardware tests at it ([OCCT](https://rtech.support/guides/how-to-use-occt/), [Stress testing](https://rtech.support/guides/hwinfo/), [memtest86+](https://rtech.support/guides/memtest/memtest86/), etc.) and hope eventually one may find something. That or get an exorcist.
 

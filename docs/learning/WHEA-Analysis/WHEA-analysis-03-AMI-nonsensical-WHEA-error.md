@@ -17,7 +17,7 @@ last_modified_date: 2025-11-20
 ## Who is AMI?
 AMI, or American Megatrends, Inc., is an international hardware and software company that specializes in PC hardware and firmware mainly. Most people would usually know them from seeing a screen like this when they [reset their CMOS](https://rtech.support/factoids/cmos/) of their motherboard (or reset their BIOS to default):
 
-![/RTS-Extra-Docs/assets/img/AMI_WHEA/BIOS_Reset.jpeg](/RTS-Extra-Docs/assets/img/AMI_WHEA/BIOS_Reset.jpeg)
+![../../../assets/img/AMI_WHEA/BIOS_Reset.jpeg](../../../assets/img/AMI_WHEA/BIOS_Reset.jpeg)
 
 This may seem confusing for some, as many would have purchased a brand motherboard, such as ASUS, or MSI, or Gigabyte. Or it could be a prebuilt from Dell or HP, but nowhere does it state anything about AMI anywhere, and some may even confuse this as their PC having a virus of some kind. Seeing this sort of screen is no reason to panic, and in fact is completely expected upon a CMOS reset.
 

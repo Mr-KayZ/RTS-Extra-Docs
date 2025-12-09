@@ -68,7 +68,7 @@ First and foremost the best source will be from the manufacturers themselves. If
 
 #### <u>Forums</u>
 Another excellent resource is forums. These platforms are where individuals with various issues and experiences share their problems, offer solutions, and discuss fixes. Some reliable options include Reddit, XDA Developers, and Tom's Hardware. By reading through multiple posts, you can see how different people tackle an issue and whether anyone has found a solution. For example:
-![/RTS-Extra-Docs/assets/img/How-to-troubleshoot/Forum_posts.png](/RTS-Extra-Docs/assets/img/How-to-troubleshoot/Forum_posts.png)
+![../../../assets/img/How-to-troubleshoot/Forum_posts.png](../../../assets/img/How-to-troubleshoot/Forum_posts.png)
 
 Forums are also valuable for reviews because they provide real user experiences, diverse opinions, and detailed discussions. They foster a sense of community where users support each other and offer up-to-date information, making them a reliable resource for comprehensive and authentic reviews.
 
@@ -107,7 +107,7 @@ Another sure giveaway is the sheer number of ads and "Sales" these websites will
 > A classic example of this would be the MiniTool "troubleshooting posts" for a issue, which sometimes give very generic answers to solving a problem "How to Fix DISM Error 0x800f081f on Windows 10?"
 > 
 > Almost all of these articles will state the general "Download our tool to fix all your issues!" while giving a very generic statement about what the issue is without delving into more information regarding it and what can be the root cause for them, and then proceed to give generic fixes about those issues. This is plain false advertisement and clickbait.
-> ![/RTS-Extra-Docs/assets/img/How-to-troubleshoot/minotool.png](/RTS-Extra-Docs/assets/img/How-to-troubleshoot/minitool.png)
+> ![../../../assets/img/How-to-troubleshoot/minotool.png](../../../assets/img/How-to-troubleshoot/minitool.png)
 > MiniTool is a partitioning tool (Which we do not support as its paid and closed source) that is a paid for service to do multiple things. While not a bad tool by itself, we disavow it due to its incessant advertisement and false marketing. Any company that partakes in these practices automatically are subject to the same treatment as "bad source".
 
 That being said, it isn't a bad idea to try the other generic fixes provided by them anyways. If you can ignore the sheer number of advertisements and their constant selling of their unnecessary software, you can try out the general fixes offered by them, and see if they aid in the situation. More often than not, the suggestions are generally fine and nothing harmful per say.
