@@ -18,7 +18,7 @@ last_modified_date: 2024-12-10
 Suppose you encounter a WHEA in specify where there are no specific MCE records (Instead it states `CMCI_NOTIFY_TYPE_GUID` in the Notify type - This stands for **Corrected Machine Check Interrupt**), this means you will have to go through the error packets and figure out what it means.
 
 For context, CMCI - Corrected Machine Check Interrupt - Means that the WHEA error was encountered by Windows, but was corrected accordingly. This is why the severity of the crash is not fatal but "Warning".
-![/RTS-Extra-Docs/assets/img/WHEA_Analysis/WHEA_Error_Records.png](/.../.../assets/img/WHEA_Analysis/WHEA_Error_Records.png)
+![/../../assets/img/WHEA_Analysis/WHEA_Error_Records.png](/../../assets/img/WHEA_Analysis/WHEA_Error_Records.png)
 
 This however does not mean there isn't an issue with the hardware. A WHEA error can still be a potential hardware problem after all.
 
