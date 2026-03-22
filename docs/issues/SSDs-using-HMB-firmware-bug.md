@@ -65,8 +65,8 @@ Alternatively if a firmware update is not present, and you have confirmed that t
    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort]
    "HmbAllocationPolicy"=qword:0000000000000000
    ```
-3. Save this `.txt` file as a `.reg` file by simply renaming the extension. Preferably name it as `HMB_Disable_.reg`.
-4. Run the `DWM_Fix.reg` file. You may have a UAC (User Account Control) dialogue popup.
+3. Save this `.txt` file as a `.reg` file by simply renaming the extension. Preferably name it as `HMB_Disable.reg`.
+4. Run the `HMB_Disable.reg` file. You may have a UAC (User Account Control) dialogue popup.
 
 Once that is done, reboot the computer to see the changes apply.
 
