@@ -110,7 +110,7 @@ Issue was, it has a USB A port on the front. And I did not have any USB A to A c
     <figcaption>If it works, it ain't stupid</figcaption>
 </figure>
 
-{: .info }
+{: .note }
 > **iDRAC default login**
 >
 > The default username and password for these legacy iDRAC devices is User: `root` and password: `calvin`. 
@@ -135,7 +135,7 @@ It was here where I found out something interesting. The files you add here must
 
 With both BIOS and iDRAC firmware updated, its time to set up my network properly. Now unfortunately my ISP provider only has an extremely rudimentary DHCP server built into the router and there is no way to set ranges nor do anything more than to reserve slots, unless I pay for a business plan which as a student at the time, yeah I don't have the cash to pay for enterprise networking. So static IP it is. These can be found in the "Network" tab underneath iDRAC settings.
 
-{: .info }
+{: .note }
 > **iDRAC Network settings**
 >
 > This page only sets the network settings of the iDRAC only! To set up the OS IP, you must do so within the OS itself.
@@ -178,6 +178,8 @@ The core of my homelab will be my server obviously since its designed to run 24/
 Now before, my main thought was that Proxmox only was designed to run full scale VMs and whatnot, and surely would require a bit more power than what a measly Xeon E3 1270 V5 can provide, but then I realized that I can just run bare bones lightweight linux installs and containers instead and run different apps and services through those instead. And if I want to take it even further, I can make full-on LXC containers that are even more bare bones for maximum performance.
 
 If that's not enough, I can also run bare bones debian CLI directly and manually run the services and apps I want too, but that will require me to run a full CLI and sure while I can do that, I got more experience with Proxmox and Proxmox comes with a web interface built in already so I won't have to set up my own. I nuked my TrueNAS install and installed Proxmox instead, and decided to set it up all again from scratch. And now, my server finally has more purpose in it.
+
+#### Why Proxmox?
 
 Now some of you may inquire: Doesn't TrueNAS have a VM service too? Why not use TrueNAS for setting up VMs?
 

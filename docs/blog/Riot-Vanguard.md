@@ -116,7 +116,7 @@ Now this sounds invasive, but it really is just a normal security layer against 
 The latest update to Riot Vanguard now aggressively enables and enforces IOMMU-style restrictions specifically against DMA-cheat-style behavior. Here's the full breakdown on what it does.
 
 - **Forces enablement / strict mode:**
-    - Vangaurd instructs the OS to enable or tighten IOMMU/Kernel DMA Protection for the platforms when it can, even if the previous user or BIOS setting left it off or on "auto".
+    - Vanguard instructs the OS to enable or tighten IOMMU/Kernel DMA Protection for the platforms when it can, even if the previous user or BIOS setting left it off or on "auto".
     - This by itself blocks many DMA-based cheat cards that assume they can just DMA-into RAM without the OS and chipset policing them - so not a bad thing.
     - But forcibly enabling this without user permission is extremely sketchy. The proper way was to inform the user the game will just not run if those settings are disabled, not forcibly enabling them without user intervention.
     - It basically is using IOMMU which is designed as a hardware-rooted security feature as an active weapon against particular device classes, while forcing this feature on for all users, not as a security toggle.
@@ -127,7 +127,7 @@ The latest update to Riot Vanguard now aggressively enables and enforces IOMMU-s
 
 - **Effectively <u>bricks</u> the cheating hardware:**
     - In many cases, the error is not just a temporary block: the DMA device's firmware or state or configuration is destroyed enough that it stops responding to the OS, even after a reboot or uninstalling Vanguard and Valorant.
-    - Some reports say users are forced to re-flash the card's firmware or reinstall the OS entirely or both to get the system back to a stable state, which is why people say Vanguard has "bricked" $4000-$6000 DMA rigs, as according to these twitter threads: 
+    - Some reports say users are forced to re-flash the card's firmware or reinstall the OS entirely or both to get the system back to a stable state, which is why people say Vanguard has "bricked" <span>$</span>4000 - <span>$</span>6000 DMA rigs, as according to these twitter threads: 
     ![../../assets/img/Blog/Vanguard-01.png](../../assets/img/Blog/Vanguard-01.png)
 
 This goes beyond “normal” KAC behavior (which usually only scans or kills processes and drivers) and into the realm of actively reconfiguring the machine's hardware security features in a way that can cause collateral damage to the user's system if they have certain devices or configurations..
