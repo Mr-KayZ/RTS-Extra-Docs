@@ -106,7 +106,7 @@ Numerous reasons why Vanguard is considered the S tier in terms of invasiveness:
 ---
 
 ## Riot has gone too far
-In light of Riot trying to fight against the main bypass to Vanguard which is DMA, they introduced the "IOMMU / DMA protection". This is considered an extremely aggressive hardware-level countermeasure against DMA.
+In light of Riot trying to fight against the main bypass to Vanguard which is DMA, they introduced the "IOMMU / DMA protection" for the May 2026 update. This is considered an extremely aggressive hardware-level countermeasure against DMA.
 
 The IOMMU (Input-Output Memory Management Unit) is a hardware feature on modern CPUs and motherboards which control which PCIe devices can access which pages of RAM. In Windows, this is exposed to the OS as Kernel DMA Protection (including for Thunderbolt and certain PCIe devices) so the kernel can restrict DMA-capable peripherals from directly reading arbitrary memory.
 
