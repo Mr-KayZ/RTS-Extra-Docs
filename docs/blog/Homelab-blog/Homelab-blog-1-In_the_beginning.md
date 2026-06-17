@@ -7,7 +7,7 @@ parent: Homelab-blog
 grand_parent: Blog and personal opinions
 # has_toc: false
 search_exclude: false
-last_modified_date: 2026-06-04
+last_modified_date: 2026-06-17
 ---
 # In the beginning
 
