@@ -3,8 +3,8 @@ layout: default
 title: WHEA-Analysis - 03 - AMI Nonsensical WHEA error
 nav_exclude: false
 has_children: false
-parent: Learning and Notes
-# grand_parent:
+parent: WHEA-Analysis
+grand_parent: Learning and Notes
 # has_toc: false
 search_exclude: false
 last_modified_date: 2025-11-20
