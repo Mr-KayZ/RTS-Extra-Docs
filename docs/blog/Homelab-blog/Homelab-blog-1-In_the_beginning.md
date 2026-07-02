@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Homelab-Blog-1 - In the beginning
+description: A quick story of my life so far and how I ended up with my T330.
 nav_exclude: false
 has_children: false
 parent: Homelab-blog
