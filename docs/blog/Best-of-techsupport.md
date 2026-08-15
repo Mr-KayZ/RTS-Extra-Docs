@@ -129,9 +129,3 @@ It was a 7950X3D too...
 ### I need a 4090 to get better FPS!
 *He says on a 75 Hz display...*
 ![](../../assets/img/Blog/Best-of-ts/singles/image31.png)
-
-### Hey can I delete important driver folders?
->Shows C drive
->"Hey can I delete these?"
->Everyone literally says NO!
->"Ok I delete anyway!"
