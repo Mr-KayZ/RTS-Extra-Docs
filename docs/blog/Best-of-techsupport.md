@@ -129,3 +129,10 @@ It was a 7950X3D too...
 ### I need a 4090 to get better FPS!
 *He says on a 75 Hz display...*
 ![](../../assets/img/Blog/Best-of-ts/singles/image31.png)
+
+### Hotplugging a... GPU?
+
+<video width="50%" controls preload="metadata">
+  <source src="{{ '/assets/img/Blog/Best-of-ts/singles/video1.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
