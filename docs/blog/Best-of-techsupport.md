@@ -136,3 +136,6 @@ It was a 7950X3D too...
   <source src="{{ '/assets/img/Blog/Best-of-ts/singles/video1.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+### "Oh no"
+![](../../assets/img/Blog/Best-of-ts/singles/image33.png)
