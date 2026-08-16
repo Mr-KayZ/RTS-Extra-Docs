@@ -133,7 +133,7 @@ It was a 7950X3D too...
 ### Hotplugging a... GPU?
 
 <video width="50%" controls preload="metadata">
-  <source src="{{ '../../assets/img/Blog/Best-of-ts/singles/video1.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '../../assets/img/Blog/Best-of-ts/singles/Video1.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
