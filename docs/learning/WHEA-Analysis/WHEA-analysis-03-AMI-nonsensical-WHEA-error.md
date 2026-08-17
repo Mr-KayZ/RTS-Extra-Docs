@@ -61,6 +61,7 @@ From observations of all manners of motherboards running Specify, we have notice
 {: .note }
 > As of the time of writing this, r/techsupport helpers (including I) have internally classified this as the "AMI-Nonsensical WHEA error". Until AMI or Microsoft actually provides a proper description as to what could the GUID actually mean or point to, this WHEA error will be disregarded when troubleshooting user issues.
 
+---
 ## Credits:
 - Thank you once again [JimmahDean](https://github.com/JimmahDean) for everything he has done so far to help me get a avid interest into hardware and tech as a whole, especially informing me about this particular weird case of WHEA reports.
 - The following thread: [https://www.bleepingcomputer.com/forums/t/795915/how-can-i-speak-with-someone-knowledgeable-on-complicated-topics/](https://www.bleepingcomputer.com/forums/t/795915/how-can-i-speak-with-someone-knowledgeable-on-complicated-topics/)
