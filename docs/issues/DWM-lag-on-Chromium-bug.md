@@ -86,5 +86,6 @@ In this registry hive, add a new `DWORD(32-bit)` entry:
 
 After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
 
+---
 ## Credits
 Thanks to [Maliwolf on Reddit](https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related/) for helping me make this Wiki entry. They are the primary source for this issue and potential fix.
