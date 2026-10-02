@@ -17,6 +17,7 @@
         "fusers",
         "IOMMU",
         "JEDEC",
+        "Maliwolf",
         "microcontroller",
         "optionalfeatures",
         "overvoltage",

@@ -36,7 +36,7 @@ According to the [official statement from Intel](https://community.intel.com/t5/
 Do note that due to these issues, Intel has issued a extension to the warranty to the affected CPUs (both 13th and 14th generation), more details can be found here: [Additional Warranty Updates on Intel Core 13th/14th Gen Desktop Processors - Intel Community](https://community.intel.com/t5/Processors/Additional-Warranty-Updates-on-Intel-Core-13th-14th-Gen-Desktop/m-p/1620853)
 
 {: .important }
-> *If you are running a 13th or 14th gen Intel CPU, please <u>update the BIOS IMMEDIATELY</u> to microcode update 0x129 or higher to address the overvoltage issues!*
+> *If you are running a 13th or 14th gen Intel CPU, please <u>update the BIOS IMMEDIATELY</u> to microcode update 0x12B or higher to address the overvoltage issues!*
 
 Do note that Intel 12th gen CPUs, despite being on the same socket of LGA 1700, do not face these issues as their architecture is different (Alder Lake), compared to the 13th and 14th gen who's architectures are similar (Raptor Lake).
 
@@ -53,7 +53,7 @@ In order to test for a potentially faulty processor, utilize Intel's official Pr
 > Sometimes this test tool may pass despite the processor internally actually having an issue. According to numerous sources from several different forums, it is recommended to **run the test tool at least 3-5 times** to be absolutely sure of a faulty processor.
 
 ## Known Solution
-- **Update BIOS immediately to microcode update `0x129` or the improved `0x12B` or even higher.** This is the only known fix approved by Intel directly at the time of writing.
+- **Update BIOS immediately to microcode update `0x12B` or even higher.** This is the only known fix approved by Intel directly at the time of writing.
 
 After updating BIOS, follow the testing procedures outlined above to ensure that the CPU seems fine or works accordingly. If it fails in any of these tests, it may be possible your CPU already is physically damaged hardware wise, and the only way to fix that is to issue a RMA request directly to Intel.
 
