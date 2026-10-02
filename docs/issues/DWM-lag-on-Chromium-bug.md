@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DWM stutter and lag on Chromium based Services
+title: DWM/MPO stutter and lag on Chromium based Services
 nav_exclude: false
 has_children: false
 parent: Tech Issues and How to Solve them
@@ -9,13 +9,13 @@ parent: Tech Issues and How to Solve them
 search_exclude: false
 last_modified_date: 2025-11-20
 ---
-# DWM stutter and lag on Chromium based Services
+# DWM/MPO stutter and lag on Chromium based Services
 {: .no_toc }
 
 {% include toc.md %}
 
 ## Background
-Symptoms of users mainly indicate issues with Electron or Chromium based services since the update to Windows 11 24H2 (at the time of writing, this bug still persists in 25H2). Services include applications such as Discord, Visual Studio Code, and even Chromium based browsers such as Edge or Chrome itself, particularly when the user alt-tabs from a GPU heavy process such as a video game or equivalent.
+Symptoms of users mainly indicate issues with Electron or Chromium based services since the update to Windows 11 24H2 (at the time of writing, this bug still persists in 26H2). Services include applications such as Discord, Visual Studio Code, and even Chromium based browsers such as Edge or Chrome itself, particularly when the user alt-tabs from a GPU heavy process such as a video game or equivalent.
 
 Users describe the issue as graphical glitches manifesting in the form of:
 - Parts of the interface being updated (Such as scrolling through discord, but only a third of the window is being updated while the rest is frozen).
@@ -23,7 +23,7 @@ Users describe the issue as graphical glitches manifesting in the form of:
 
 Multiple fixes have been offered, ranging from DDU and reinstallation of GPU drivers to disabling Hardware Accelerated GPU Scheduling (HAGS) and everything in between have been offered, including full reinstalls of the OS. While these may seem to temporarily resolve the issue, the bug still persists and eventually reveals itself a few days to a few weeks after attempted fix has been applied. It also does not matter what GPU manufacturer a user may utilize: NVidia, AMD and Intel GPUs all face this bug - this would indicate to one with a keen eye that the issue is not in fact with drivers or the GPU, but rather Windows itself.
 
-User reports of "Screen tearing" or "Screen glitches" often makes it hard to see how widespread the issue is as the generic terms of describing the issue due to lack of technical knowledge in describing exactly what is being displayed, however based on personal observance from friends and helpers alike on the [r/techsupport discord server](https://discord.gg/2EDwzWa), it appears to be more common than one may think. (I personally have not encountered this bug however I will admit.)
+User reports of "Screen tearing" or "Screen glitches" often makes it hard to see how widespread the issue is as the generic terms of describing the issue due to lack of technical knowledge in describing exactly what is being displayed, however based on personal observance from friends and helpers alike on the [r/techsupport discord server](https://discord.gg/2EDwzWa), it appears to be more common than one may think.
 
 ### What is DWM?
 Desktop Window Manager (DWM) is Windows’ GPU compositor: it takes GPU-backed buffers (Direct3D/DXGI swap chains), composes and blends them, and presents the final desktop framebuffer to the display. DirectX provides the swap chains, textures, and GPU present path that DWM orchestrates and may promote to hardware overlay planes for direct scanout (i.e. display to screen).
@@ -36,6 +36,14 @@ DWM is dynamically assigning and reassigning DirectX swap chains between standar
 Chromium/Electron apps like VS Code and Discord produce GPU-backed swap chains that can be low‑FPS while idle; when DWM’s minimum-frame-rate policy decides a surface is too slow it moves that swap chain off an overlay (or back onto one) causing the PresentMon “Composed: Flip” to “Hardware Composed: Independent Flip” oscillation. 
 
 That back-and-forth changes presentation timing, can drop or duplicate frames during focus/input transitions, and produces visible stutters or responsiveness oddities. Firefox appears unaffected because it uses a different surface/path or swap-chain lifecycle that avoids the same overlay assignment behavior.
+
+{: .info }
+> **Relation to MPO (Multi Plane Overlay)**
+>
+> The "hardware overlay planes" DWM assigns swap chains to are implemented via Windows' Multi‑Plane Overlay (MPO) feature. On Windows 11, DWM's policy for promoting low‑FPS swap chains to MPO planes changed, causing frequent reassignment between composed flips and MPO‑backed Independent Flip. The `OverlayMinFPS=0` tweak disables DWM's minimum‑FPS gate for MPO plane assignment, stabilizing this behavior.
+
+{: .note }
+> Many reports describe this as an "MPO issue"; more precisely, it is a DWM policy bug in how it utilizes MPO.
 
 ---
 ## Symptoms and Diagnosis
@@ -54,10 +62,22 @@ That back-and-forth changes presentation timing, can drop or duplicate frames du
       - Discord Overlays, Game overlays (XBox game bar, Steam Overlay, etc.), Multi-Plane Overlay (MPO), etc.
    - In-Place install of Windows and full Windows reinstalls.
 
-## Potential Solutions
+## Potential Solutions 1 - Disable the Min FPS limit
 The key idea to potentially fix this is to disable DWM's minimum-FPS requirement for assigning swap chains to overlay planes, making the low-FPS chains likelier to remain on overlays. This will involve tinkering with the registry.
 
-### Method 1: Saving as a .reg file
+### Method 1: Using PowerShell
+1. Open up PowerShell as Administrator. (Different methods exist)
+   - Method 1: Press `Win + R` to open the Run box. Type in `powershell` in the prompt. Then press `Ctrl + Shift + Enter` to launch as elevated.
+   - Method 2: Press `Win + X` to open the Power Users menu, then press `A` to open up the terminal (Powershell) as admin.
+   - Method 3: Search up `powershell` in Search, and then click on `Run as Administrator` in the options menu.
+2. Type the following command:
+   ```ps
+   reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows\DWM' /v OverlayMinFPS /t REG_DWORD /d 0 /f
+   ```
+
+After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
+
+### Method 2: Saving as a .reg file
 1. Open up notepad.
 2. Copy and paste the following into the note file:
 
@@ -72,7 +92,7 @@ The key idea to potentially fix this is to disable DWM's minimum-FPS requirement
 
 After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
 
-### Method 2: Using Regedit
+### Method 3: Using RegEdit
 
 {: .warning }
 > *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows), unless you have backed the registry or have a System Restore point. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.*
@@ -86,6 +106,42 @@ In this registry hive, add a new `DWORD(32-bit)` entry:
 
 After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
 
+## Potential Solutions 2 - Disable MPO entirely
+
+In the event that solution 1 does not solve the issue, you can opt for disabling MPO entirely.
+
+### Method 1: Following the official NVidia guide
+[NVidia has published an official method to disable MPO entirely](https://nvidia.custhelp.com/app/answers/detail/a_id/5157/~/what-is-multi-plane-overlay-%28mpo%29-in-windows-11). It is recommended to follow that guide to fix this issue.
+
+### Method 2: Using PowerShell
+1. Open up PowerShell as Administrator. (Different methods exist)
+   - Method 1: Press `Win + R` to open the Run box. Type in `powershell` in the prompt. Then press `Ctrl + Shift + Enter` to launch as elevated.
+   - Method 2: Press `Win + X` to open the Power Users menu, then press `A` to open up the terminal (Powershell) as admin.
+   - Method 3: Search up `powershell` in Search, and then click on `Run as Administrator` in the options menu.
+2. Type the following command:
+   ```ps
+   reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
+   ```
+
+After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
+
+### Method 3: Using RegEdit
+
+{: .warning }
+> *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows), unless you have backed the registry or have a System Restore point. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.*
+
+Open up registry, head to the following registry hive: 
+- `HKLM\SOFTWARE\Microsoft\Windows\DWM`
+
+In this registry hive, add a new `DWORD(32-bit)` entry:
+- Name: `OverlayTestMode`
+- Value: `5`
+
+After adding the key, open Task Manager, find Desktop Window Manager (dwm.exe), choose "End task". DWM will restart automatically and the overlay assignment thrash should stop; reboot if you prefer.
+
 ---
 ## Credits
-Thanks to [Maliwolf on Reddit](https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related/) for helping me make this Wiki entry. They are the primary source for this issue and potential fix.
+- Thanks to [Maliwolf on Reddit](https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related/) for helping me make this Wiki entry.
+- Official [NVidia fix for the issue](https://nvidia.custhelp.com/app/answers/detail/a_id/5157/~/what-is-multi-plane-overlay-%28mpo%29-in-windows-11).
+- Official [Microsoft Documentation on MPO](https://learn.microsoft.com/en-us/windows-hardware/drivers/display/multiplane-overlay-support) and how it operates.
+- Special thanks to `bjoolz` (Discord) for guiding me to identifying the issue more properly too.

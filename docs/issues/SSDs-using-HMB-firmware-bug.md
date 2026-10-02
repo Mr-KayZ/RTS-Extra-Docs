@@ -55,7 +55,19 @@ Alternatively if a firmware update is not present, and you have confirmed that t
 {: .important }
 > *Doing this will result in DRAM-less drives in your system to operate at slower speeds, causing performance loss, so update the firmware once available to regain normal speeds with HMB enabled (i.e. delete the below registry key once you update firmware).*
 
-### Method 1: Saving as a .reg file
+### Method 1: Using PowerShell
+1. Open up PowerShell as Administrator. (Different methods exist)
+   - Method 1: Press `Win + R` to open the Run box. Type in `powershell` in the prompt. Then press `Ctrl + Shift + Enter` to launch as elevated.
+   - Method 2: Press `Win + X` to open the Power Users menu, then press `A` to open up the terminal (Powershell) as admin.
+   - Method 3: Search up `powershell` in Search, and then click on `Run as Administrator` in the options menu.
+2. Type the following command:
+   ```ps
+   reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\StorPort" /v HmbAllocationPolicy /t REG_QWORD /d 0 /f
+   ```
+
+Once that is done, reboot the computer to see the changes apply.
+
+### Method 2: Saving as a .reg file
 1. Open up notepad.
 2. Copy and paste the following into the note file:
 
@@ -70,7 +82,7 @@ Alternatively if a firmware update is not present, and you have confirmed that t
 
 Once that is done, reboot the computer to see the changes apply.
 
-### Method 2: Using Regedit
+### Method 3: Using Regedit
 
 {: .warning }
 > *The registry is very powerful and allows you to change many things regarding how Windows operates, but it can be dangerous if you mess up adding keys or values to areas which do not belong. If you decide to do your own thing, you may end up with a broken Windows install which can only be fixed with a [reinstall of Windows](https://rtech.support/windows), unless you have backed the registry or have a System Restore point. Note that this also is no guarantee if you cannot access Windows to begin with if it is that broken.*

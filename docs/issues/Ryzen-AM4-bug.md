@@ -53,6 +53,16 @@ You may also have to edit other values, including memory controller voltages dir
 - **CPU VDDP/VDDG CCD** - Memory controller voltage, typical operation for DDR4 is `0.9-0.95V`.
 - **CPU VDD18** - To deal with infinity fabric. Set to `1.85V` if issues still persist. Raise this by `0.05V` increments to a maximum of `2V` if issues still occur with regards to stability.
 
-Additionally, look into overclocking guides to see VCore voltage and VSOC. Sometimes some manufacturers set really low values even below the offsets, in which case you may manually have to change it. 
+Additionally, look into overclocking guides to see VCore voltage and VSOC. Sometimes some manufacturers set really low values even below the offsets, in which case you may manually have to change it.
 
 For AM4, set both to `1.125V`, this is the known working values for most AM4 CPUs.
+
+{: .important }
+> *Remember to always test with [OCCT](https://www.ocbase.com/download-personal) every time you make any changes to the BIOS to test stability!*
+>
+> Specifically test the CPU and memory sections.
+
+---
+## Credits
+- Thanks to [JimmahDean](https://github.com/JimmahDean), `bjoolz` (Discord) and `therublixcube` (Discord) for helping me identify the issue, voltages and suggested fixes.
+- Also thanks to r/overclocking and TechPowerUp to find the proper stable voltages for AM4.
