@@ -40,7 +40,7 @@ It goes without saying your entry to troubleshooting stuff would begin with Goog
 It never hurts to learn more, and its better to take your time learning more about something before giving the fix than to immediately assume something else and state that's what the problem is. Keep an open mind, and don't jump to conclusions. Another famous quote applies here :
 
 {: .quote }
-> "It is dangerous to assume because you might make an “ass” out of “u” and “me”."
+> "It is dangerous to assume because you might make an "ass” out of "u” and "me”."
 
 The last thing you want is to give advice that causes issues to the user you are trying to help, such as replacing a CPU or Motherboard to fix a issue when in reality the issue was with the PSU all along. Sure the user could have done a warranty so financially it won't affect them, but the headache and mental stress incurred by a warranty replacement is not something anyone should go through for every single minor problem. (Ok PSU being faulty is a problem but you know what I mean!)
 

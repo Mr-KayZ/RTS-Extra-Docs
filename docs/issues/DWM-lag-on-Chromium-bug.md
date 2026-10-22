@@ -33,7 +33,7 @@ Desktop Window Manager (DWM) is Windows’ GPU compositor: it takes GPU-backed b
 ### Main issue
 DWM is dynamically assigning and reassigning DirectX swap chains between standard composed flips and hardware overlay (Independent Flip) planes based on perceived frame rate and activity. 
 
-Chromium/Electron apps like VS Code and Discord produce GPU-backed swap chains that can be low‑FPS while idle; when DWM’s minimum-frame-rate policy decides a surface is too slow it moves that swap chain off an overlay (or back onto one) causing the PresentMon “Composed: Flip” to “Hardware Composed: Independent Flip” oscillation. 
+Chromium/Electron apps like VS Code and Discord produce GPU-backed swap chains that can be low‑FPS while idle; when DWM’s minimum-frame-rate policy decides a surface is too slow it moves that swap chain off an overlay (or back onto one) causing the PresentMon "Composed: Flip” to "Hardware Composed: Independent Flip” oscillation. 
 
 That back-and-forth changes presentation timing, can drop or duplicate frames during focus/input transitions, and produces visible stutters or responsiveness oddities. Firefox appears unaffected because it uses a different surface/path or swap-chain lifecycle that avoids the same overlay assignment behavior.
 

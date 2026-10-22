@@ -93,7 +93,7 @@ Numerous reasons why Vanguard is considered the S tier in terms of invasiveness:
 
 - **Loads at system startup, not just game launch:**
     - The kernel driver `vgk.sys` starts with Windows and runs continuously, even when Valorant or League of Legends is closed.
-    - Most other KACs (BattlEye, EAC, etc.) typically load only when the game itself starts, which feels less “permanent.
+    - Most other KACs (BattlEye, EAC, etc.) typically load only when the game itself starts, which feels less "permanent".
 
 - **Deep kernel‑level monitoring and memory‑scan depth**:
     - Vanguard runs at Ring-0 and can scan low-level memory regions and system structures to catch advanced cheats, which raises both security and privacy concerns.
@@ -130,7 +130,7 @@ The latest update to Riot Vanguard now aggressively enables and enforces IOMMU-s
     - Some reports say users are forced to re-flash the card's firmware or reinstall the OS entirely or both to get the system back to a stable state, which is why people say Vanguard has "bricked" <span>$</span>4000 - <span>$</span>6000 DMA rigs, as according to these twitter threads: 
     ![../../assets/img/Blog/Vanguard-01.png](../../assets/img/Blog/Vanguard-01.png)
 
-This goes beyond “normal” KAC behavior (which usually only scans or kills processes and drivers) and into the realm of actively reconfiguring the machine's hardware security features in a way that can cause collateral damage to the user's system if they have certain devices or configurations..
+This goes beyond "normal” KAC behavior (which usually only scans or kills processes and drivers) and into the realm of actively reconfiguring the machine's hardware security features in a way that can cause collateral damage to the user's system if they have certain devices or configurations..
 
 ### Personal opinion: Good intentions, extremely wrong execution
 Well, I will admit, I absolutely hate cheaters in any video game whatsoever. So yes, bringing them misery is fun for me, especially when said cheaters get caught and get banned and whatnot. I am sure many others who had been on the receiving end of playing against a cheater would also very much agree to my sentiment too.

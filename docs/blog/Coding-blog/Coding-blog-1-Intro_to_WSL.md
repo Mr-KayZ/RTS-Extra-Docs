@@ -25,7 +25,7 @@ Windows Subsystem for Linux (WSL) lets you run a real Linux environment inside W
 
 For a typical Windows developer, WSL is a way to use Linux‑first tools (bash, git, language runtimes, package managers, build systems) right on the same machine you use for Visual Studio, VS Code, and browsers. For a Linux developer now on Windows, it gives you a familiar Linux userland and command‑line workflow, so you can treat WSL almost like a local dev server.
 
-At a high level, WSL provides “Linux userland on Windows”—Linux distributions like Ubuntu and Debian run directly on top of Windows, but use Windows’ resources (CPU, memory, disk) and integrate with Windows apps. 
+At a high level, WSL provides "Linux userland" on Windows-Linux distributions like Ubuntu and Debian run directly on top of Windows, but use Windows’ resources (CPU, memory, disk) and integrate with Windows apps. 
 
 {: .info }
 > There are two versions: WSL 1 and WSL 2; you’ll choose later, but you only need the names for now.
