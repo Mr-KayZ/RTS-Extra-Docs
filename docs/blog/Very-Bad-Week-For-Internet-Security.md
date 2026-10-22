@@ -66,4 +66,4 @@ These implementations were reported as unpatched; their exact disclosure date an
 
 ---
 ## Credits:
-Thank you to my friends at the discord servers for r/techsupport and PCHH: `beandotmp3`, `solus_bellator`, `itsblados` and `goodblobplsgivecookie` for feeding me info into what CVEs to look for to make this list.
+Thank you to my friends at the discord servers for r/techsupport and PCHH: `beandotmp3`, `solus_bellator`, `itsblados`, `codepanda` and `goodblobplsgivecookie` for feeding me info into what CVEs to look for to make this list.
