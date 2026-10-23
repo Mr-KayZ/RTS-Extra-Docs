@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A very bad week for Internet Security (October 19+)
+title: A very bad week for Internet Security (October 19-22)
 nav_exclude: false
 has_children: false
 parent: Blog and personal opinions
@@ -14,14 +14,14 @@ last_modified_date: 2026-10-21
 {% include toc.md %}
 
 ## What the hell is happening?
-So it started out with one single tweet about two critical PHP vulnerabilities (`CVE-2026-109618` and `CVE-2026-109619`), which came to be known as PHP2Shell Vulnerability that was announced just yesterday (Tuesday 20 October). Emergency security patches were released for these two immediately, following an earlier-than-planned release after details of these vulnerabilities were released.
+So it started out with one single tweet about two critical PHP vulnerabilities (`CVE-2026-109618` and `CVE-2026-109619`), which came to be known as PHP2Shell Vulnerability that was announced just a few days ago at the time of writing (Tuesday 20 October). Emergency security patches were released for these two immediately, following an earlier-than-planned release after details of these vulnerabilities were released.
 
 Since then, even more vulnerabilities (not just from PHP) came to surface, one after another, affecting different services, platforms, etc., some straight up being extremely severe (such as the PHP one), others, not as much.
 
 ## Time to make a list
-This list basically is a list of every single vulnerability classified as date-first, severity second sorting, which covers some of the most impactful vulnerabilities and issues, along with a few of my own comments, which I came across. Without further ado, allow me to list the following Hell on Earth: A very bad week for Internet Security.
+This list basically is a list of every single vulnerability classified as date-first, severity second sorting, which covers some of the most impactful vulnerabilities and issues, along with a few of my own comments, which I came across. Without further ado, allow me to list the following Hell on Earth: A very bad week for Internet Security. (Currently documenting October 19-22)
 
-### Vulnerabilities & Security Updates - October 19–22
+### Vulnerabilities & Security Updates
 - Oct 22 - [Linux kernel - multiple prematurely disclosed vulnerabilities](https://www.phoronix.com/news/LKML-New-Trend-Vulnerabilities) - CVSS up to 9.0: Apparently accidental public reports expose SMB-related RCE, local privilege-escalation, and information-disclosure flaws before mainline fixes are available. (Six reports discussed; one was posted the previous day. Some fixes are undergoing testing or queued.)
   - Additional note: Greg Kroah-Hartman's response to Trend Micro who leaked it: "Again, no patch, and sent to a public list? Please fix your submission process..."
 - Oct 21 - [GitLab CE/EE](https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/) - CVSS 10.0: Regex compiler overflow can permit unauthenticated server takeover; release fixes 12 vulnerabilities.
@@ -47,7 +47,10 @@ This list basically is a list of every single vulnerability classified as date-f
 - Oct 21 - [Palo Alto PAN-OS GlobalProtect](https://www.helpnetsecurity.com/2026/10/21/ransomware-groups-exploit-palo-alto-globalprotect-cve-2026-0257/) - Active exploitation; score not verified: Ransomware groups exploit an older authentication bypass to enter vulnerable networks. (CVE-2026-0257; retained for new exploitation reporting, not as a new vulnerability.)
 - Oct 20 - [eMudhra/emSign](https://www.csoonline.com/article/4238338/google-mozilla-revoke-emudhra-intermediates-after-private-key-compromise.html) - CA key compromise; no CVSS listed: Eight recoverable intermediate CA keys enable forged certificates against clients that still trust them. (Related remediation appears under Java, Go, and Firefox/NSS.)
   - Additional note: 8 keys were disclosed, one of which was literally just `4`... All others were of numerical values less than 256.
+- Oct 19 - [BeyonddTrust Remote Support - formerly Bomgar](https://www.rapid7.com/blog/post/etr-cve-2026-102764-critical-beyondtrust-remote-support-authentication-bypass-exploited-in-the-wild/) - CVSS v4.0 9.3: Actively exploited authentication bypass allows unauthenticated file operations, potentially leading to appliance takeover and credential exposure. (CVE-2026-102764; affects versions through 26.2.3 unless patched with BT26-05-RS; original disclosure Oct 15.)
 - Oct 19 - [Plex Media Server](https://arstechnica.com/security/2026/10/recently-fixed-plex-media-vulnerabilities-are-being-exploited-to-install-malware/) - CVSS 8.6, highest component: Four previously patched flaws are chained to install miners and proxy malware. (CVE-2026-96652, -96654, -96655, and -96656; retained for new exploitation reporting.)
+- Oct 19 - [Siemens Software Center](https://productcert.siemens.com/news/2026/10/19/active-exploitation-of-cve-2026-110936-in-siemens-software-center/) - CVSS v4.0 8.4: Attackers exploit DLL side-loading to execute malicious code with the application’s privileges. (CVE-2026-110936; exploitation confirmed by Siemens; fixed in 4.0.9.8.)
+- Oct 19 - [EG Secure Solutions SiteGuard Server Edition](https://securityaffairs.com/201258/security/japans-siteguard-waf-flaw-cve-2026-106931-is-already-being-exploited.html) - CVSS v4.0 8.5: Actively exploited statistics-feature command injection lets a low-privileged local attacker execute commands as root or SYSTEM. (CVE-2026-106931; original disclosure Oct 14; fixes available.)
 - Oct 19 - [TiDB Cloud/PingCAP](https://www.pingcap.com/trust-hub/security/security-update-october-2026/) - Confirmed breach; no CVSS listed: Stolen service credentials exposed source code and customer records; database-content theft remains unestablished.
 
 ### Supply-Chain Compromises
@@ -66,4 +69,4 @@ These implementations were reported as unpatched; their exact disclosure date an
 
 ---
 ## Credits:
-Thank you to my friends at the discord servers for r/techsupport and PCHH: `beandotmp3`, `solus_bellator`, `itsblados`, `codepanda` and `goodblobplsgivecookie` for feeding me info into what CVEs to look for to make this list.
+Thank you to my friends at the discord servers for [r/techsupport](https://www.reddit.com/r/techsupport/), [PCHH](https://pchelphub.com/) and [r/buildaPC](https://www.reddit.com/r/buildapc/): `beandotmp3`, `solus_bellator`, `itsblados`, `codepanda`, `sleepyhampter` and `goodblobplsgivecookie` for feeding me info into what CVEs to look for to make this list.
