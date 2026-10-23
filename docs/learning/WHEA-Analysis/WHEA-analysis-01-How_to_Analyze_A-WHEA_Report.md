@@ -53,7 +53,7 @@ Each section contains more information in particular about what potentially caus
 
 #### <u>Error Header</u>
 The [error header](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header) contains information which tells the OS and any logging tools how to interpret the rest of the data. The important section to understand here are:
-- Severity: Classification of the error’s impact (e.g., Fatal, Corrected, Informational).
+- Severity: Classification of the error's impact (e.g., Fatal, Corrected, Informational).
 - Timestamp: UTC time when the error was logged.
 - Notify Type: GUID describing how the record was delivered (e.g., DEVICE_DRIVER_NOTIFY_TYPE_GUID for driver-reported faults).
 
@@ -64,7 +64,7 @@ The most important part would be Severity and Notify Type. Notify Type can tell 
 - `PCIe_NOTIFY_TYPE_GUID`: Used when a device or root port reports an Advanced Error Reporting (AER) event via PCIe, corrected or uncorrected. See more below in "PCI Express/PCIe errors".
 - `INIT_NOTIFY_TYPE_GUID`: Generated very early in the boot process, often by firmware or pre-OS runtime. Because it precedes the full Windows kernel, these records are held in firmware or early logs and replayed once the OS is up. See more below in "Firmware errors".
 - `NMI_NOTIFY_TYPE_GUID`: Fires when hardware issues a nonmaskable interrupt line to signal a critical fault. Always higher priority than machine checks; the OS treats it as nonrecoverable unless specific drivers handle it, and its logged separately so you can distinguish board-level NMI events from CPU-centric MCEs. See more below in "Non-Maskable Interrupt (NMI)".
-- `BOOT_NOTIFY_TYPE_GUID`: Similar to INIT, but specifically for errors that occur during the OS boot loader or very early kernel initialization, and it captures issues that neither firmware nor drivers could clear, such as corrupt PE headers in critical drivers or early memory map inconsistencies. Windows may expose these as "boot diagnostics” entries in the Event Log to aid troubleshooting startup failures. See more below in "Firmware errors".
+- `BOOT_NOTIFY_TYPE_GUID`: Similar to INIT, but specifically for errors that occur during the OS boot loader or very early kernel initialization, and it captures issues that neither firmware nor drivers could clear, such as corrupt PE headers in critical drivers or early memory map inconsistencies. Windows may expose these as "boot diagnostics" entries in the Event Log to aid troubleshooting startup failures. See more below in "Firmware errors".
 
 #### <u>Error Descriptors</u>
 The [WHEA_ERROR_RECORD_SECTION_DESCRIPTOR](https://learn.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor) is a structure that contain crucial information about the associated hardware error data, including its type, severity, and other identifying characteristics. This is the meat and potatoes of the WHEA error section, as majority of the time it can tell you exactly what went wrong with the device and how Windows has handled it, be it via correction such as Corrected Machine Check Interrupt (CMCI) or a crash in Windows.
@@ -108,7 +108,7 @@ CMCI stands for Corrected Machine Check Interrupt and is a mechanism used by the
 > More information on how to decipher these can be found in [WHEA-Analysis - Corrected Machine Check Interrupt](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
 
 #### <u>Corrected Machine Checks (CMC)</u>
-A CMC is a machine check error that the CPU’s Machine Check Architecture (MCA) hardware detected and successfully recovered or corrected. It is delivered via the [MCA recovery path](https://www.intel.com/content/www/us/en/developer/articles/technical/new-reliability-availability-and-serviceability-ras-features-in-the-intel-xeon-processor.html), so the OS logs it as "corrected” without halting execution.
+A CMC is a machine check error that the CPU's Machine Check Architecture (MCA) hardware detected and successfully recovered or corrected. It is delivered via the [MCA recovery path](https://www.intel.com/content/www/us/en/developer/articles/technical/new-reliability-availability-and-serviceability-ras-features-in-the-intel-xeon-processor.html), so the OS logs it as "corrected" without halting execution.
 
 To translate CMCs, in case they do not provide a usual MCE in the error descriptors which are found in the error descriptors, you will have to resort to going through the error descriptors manually and deciphering the MCE yourself, and its the same exact way as how you would treat a normal [CMCI error](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID.md).
 
@@ -178,7 +178,7 @@ Device driver errors will be in the form of `WHEA_DEVICE_DRIVER_DESCRIPTOR` (Dri
 > Driver errors can also be due to faulty firmware, so check firmware updates for the device in question just in case. If issues still continue, the device may be faulty and a replacement may be warranted.
 
 ### Generic hardware errors
-WHEA’s generic hardware error reporting covers faults that don’t fit predefined categories (CPU, memory, PCIe, etc.), providing a unified, extensible error record format so the OS and management tools can capture, store, and act on otherwise uncategorized hardware faults.
+WHEA's generic hardware error reporting covers faults that don't fit predefined categories (CPU, memory, PCIe, etc.), providing a unified, extensible error record format so the OS and management tools can capture, store, and act on otherwise uncategorized hardware faults.
 
 These can be quite hard to diagnose directly, and may involve analysis of the error packets directly with manual decoding, similar to how its done for [WHEA-Analysis - Corrected Machine Check Interrupt](../../../docs/learning/WHEA-Analysis/WHEA-analysis-02-CMCI_NOTIFY_TYPE_GUID).
 

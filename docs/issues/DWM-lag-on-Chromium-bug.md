@@ -26,14 +26,14 @@ Multiple fixes have been offered, ranging from DDU and reinstallation of GPU dri
 User reports of "Screen tearing" or "Screen glitches" often makes it hard to see how widespread the issue is as the generic terms of describing the issue due to lack of technical knowledge in describing exactly what is being displayed, however based on personal observance from friends and helpers alike on the [r/techsupport discord server](https://discord.gg/2EDwzWa), it appears to be more common than one may think.
 
 ### What is DWM?
-Desktop Window Manager (DWM) is Windows’ GPU compositor: it takes GPU-backed buffers (Direct3D/DXGI swap chains), composes and blends them, and presents the final desktop framebuffer to the display. DirectX provides the swap chains, textures, and GPU present path that DWM orchestrates and may promote to hardware overlay planes for direct scanout (i.e. display to screen).
+Desktop Window Manager (DWM) is Windows' GPU compositor: it takes GPU-backed buffers (Direct3D/DXGI swap chains), composes and blends them, and presents the final desktop framebuffer to the display. DirectX provides the swap chains, textures, and GPU present path that DWM orchestrates and may promote to hardware overlay planes for direct scanout (i.e. display to screen).
 
-[Chromium](https://www.chromium.org/chromium-projects/) and [Electron](https://www.electronjs.org/) render into Direct3D/DXGI swap chains from their renderer/GPU processes; DWM either composes those swap chains into the desktop or assigns them to overlay planes, so Chromium/Electron windows behave like native DirectX surfaces for presentation, timing, and input, basically DWM’s decisions about composition, overlays, and present scheduling directly affect their frame delivery, latency, and visible smoothness.
+[Chromium](https://www.chromium.org/chromium-projects/) and [Electron](https://www.electronjs.org/) render into Direct3D/DXGI swap chains from their renderer/GPU processes; DWM either composes those swap chains into the desktop or assigns them to overlay planes, so Chromium/Electron windows behave like native DirectX surfaces for presentation, timing, and input, basically DWM's decisions about composition, overlays, and present scheduling directly affect their frame delivery, latency, and visible smoothness.
 
 ### Main issue
 DWM is dynamically assigning and reassigning DirectX swap chains between standard composed flips and hardware overlay (Independent Flip) planes based on perceived frame rate and activity. 
 
-Chromium/Electron apps like VS Code and Discord produce GPU-backed swap chains that can be low‑FPS while idle; when DWM’s minimum-frame-rate policy decides a surface is too slow it moves that swap chain off an overlay (or back onto one) causing the PresentMon "Composed: Flip” to "Hardware Composed: Independent Flip” oscillation. 
+Chromium/Electron apps like VS Code and Discord produce GPU-backed swap chains that can be low‑FPS while idle; when DWM's minimum-frame-rate policy decides a surface is too slow it moves that swap chain off an overlay (or back onto one) causing the PresentMon "Composed: Flip" to "Hardware Composed: Independent Flip" oscillation. 
 
 That back-and-forth changes presentation timing, can drop or duplicate frames during focus/input transitions, and produces visible stutters or responsiveness oddities. Firefox appears unaffected because it uses a different surface/path or swap-chain lifecycle that avoids the same overlay assignment behavior.
 
