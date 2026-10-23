@@ -21,7 +21,7 @@ Since then, even more vulnerabilities (not just from PHP) came to surface, one a
 ![../../assets/img/Blog/How-did-we-get-here.png](../../assets/img/Blog/How-did-we-get-here.png)
 
 ## Time to make a list
-This list basically is a list of every single vulnerability classified as date-first, severity second sorting, which covers some of the most impactful vulnerabilities and issues, along with a few of my own comments, which I came across. Without further ado, allow me to list the following Hell on Earth: A very bad week for Internet Security. (Currently documenting October 19-22)
+This list basically is a list of every single vulnerability classified as date-first, severity second sorting, which covers some of the most impactful vulnerabilities and issues, along with a few of my own comments, which I came across (and informed via friends). Without further ado, allow me to list the following Hell on Earth: A very bad week for Internet Security. (Currently documenting October 19-22)
 
 ### Vulnerabilities & Security Updates
 - Oct 22 - [Better Auth](https://app.opencve.io/cve/CVE-2026-114607) - CVSS 3.1 9.1: Certain Magic Link/OAuth configurations accept OAuth sign-in state as a login token, allowing unauthenticated user impersonation or account creation with falsely verified email. (CVE-2026-114607; affects 1.4.0-beta.18 through versions before 1.7.7; fixed in 1.7.7.)
@@ -32,6 +32,7 @@ This list basically is a list of every single vulnerability classified as date-f
   - *Additional note: GitLab.com is already patched; self-managed administrators have to apply the fix themselves. Unfortunately, hosting your own GitLab also means hosting your own emergency.*
 - Oct 21 - [Best Practice Software Bp Premier](https://github.com/advisories/GHSA-hmqc-m6cv-3c9r) - CVSS 9.8: Shared hardcoded SQL Server administrator credentials allow database takeover and potentially SYSTEM command execution. (CVE-2026-114119; affects versions before 1.14.1.1128.)
   - *Additional note: The administrator password is shared across installations, and changing it breaks the application. "Best Practice" is the company name, not an architectural description.*
+- Oct 21 - [Amazon SageMaker Python SDK](https://aws.amazon.com/security/security-bulletins/2026-142-aws/) - CVSS v4.0 9.4: Missing ownership checks let attackers pre-create a predictable S3 bucket, potentially executing code in a victim's SageMaker environment and stealing IAM credentials (CVE-2026-112408; fixed in SDK V2 2.257.3 and V3 3.10.0.)
 - Oct 21 - [PHP](https://www.php.net/archive/2026.php) - CVSS v4.0 9.2: Two memory-safety flaws let unauthenticated web requests execute server-side code. (CVE-2026-109618 and CVE-2026-109619; fixed in 8.5.12, 8.4.27, 8.3.36, and 8.2.35.)
   - *Additional note: This is a PHP runtime problem, not something your application's input validation fixes. With the demonstrated Apache `mod_php` exploit, the application does not even get a turn before things go wrong.*
 - Oct 21 - [Oracle Java SE/GraalVM](https://www.oracle.com/security-alerts/alert-cve-2026-91403.html) - CVSS 9.1: Compromised CA certificates permit forged TLS identities, enabling data interception and modification. (CVE-2026-91403; related to eMudhra.)
@@ -84,3 +85,4 @@ These implementations were reported as unpatched; their exact disclosure date an
 ---
 ## Credits:
 Thank you to my friends at the discord servers for [r/techsupport](https://www.reddit.com/r/techsupport/), [PCHH](https://pchelphub.com/) and [r/buildaPC](https://www.reddit.com/r/buildapc/): `beandotmp3`, `solus_bellator`, `itsblados`, `codepanda`, `sleepyhampter` and `goodblobplsgivecookie` for feeding me info into what CVEs to look for to make this list.
+
