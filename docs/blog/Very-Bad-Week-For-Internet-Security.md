@@ -16,7 +16,9 @@ last_modified_date: 2026-10-21
 ## What the hell is happening?
 So it started out with one single tweet about two critical PHP vulnerabilities (`CVE-2026-109618` and `CVE-2026-109619`), which came to be known as PHP2Shell Vulnerability that was announced just a few days ago at the time of writing (Tuesday 20 October). Emergency security patches were released for these two immediately, following an earlier-than-planned release after details of these vulnerabilities were released.
 
-Since then, even more vulnerabilities (not just from PHP) came to surface, one after another, affecting different services, platforms, etc., some straight up being extremely severe (such as the PHP one), others, not as much.
+Since then, even more vulnerabilities (not just from PHP) came to surface, one after another, affecting different services, platforms, etc., some straight up being extremely severe (such as the PHP one), others, not as much. All in all, it marked the beginning of a really, really bad week.
+
+![../../assets/img/Blog/How-did-we-get-here.png](../../assets/img/Blog/How-did-we-get-here.png)
 
 ## Time to make a list
 This list basically is a list of every single vulnerability classified as date-first, severity second sorting, which covers some of the most impactful vulnerabilities and issues, along with a few of my own comments, which I came across. Without further ado, allow me to list the following Hell on Earth: A very bad week for Internet Security. (Currently documenting October 19-22)
