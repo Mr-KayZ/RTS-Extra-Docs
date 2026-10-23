@@ -5,7 +5,7 @@ nav_exclude: false
 has_children: false
 parent: Blog and personal opinions
 search_exclude: false
-last_modified_date: 2026-10-21
+last_modified_date: 2026-10-22
 ---
 
 # A very bad week for Internet Security
@@ -44,7 +44,7 @@ This list basically is a list of every single vulnerability classified as date-f
 
 ### Breaches, Infrastructure Incidents & Attack Campaigns
 - Oct 22 - [Capcom - CAPCOM ID](https://www.capcom.co.jp/ir/english/news/html/e261022.html) - Confirmed breach; no CVSS or exploit disclosed: Email addresses and account metadata exposed for 11,774,247 accounts worldwide; 196 accounts had passwords illicitly changed and subsequently reset. (Credit-card information excluded; no leakage of user-set passwords confirmed; containment measures completed, with investigation ongoing.)
-- Oct 21 - [CyberCartel - Latin American financial targets](https://x.com/cyber_razz/status/2112960157642641848) - Reported attack campaign; no CVSS: AI agents using Claude, Grok, and Moonshot models reportedly automated attacks against 400+ financial targets. (According to Straiker research; target count is not a confirmed breach count.)
+- Oct 21 - [CyberCartel - Latin American financial targets](https://www.ibm.com/think/insights/unveiling-latest-banking-trojan-threats-latam) - Reported attack campaign; no CVSS: AI agents using Claude, Grok, and Moonshot models reportedly automated attacks against 400+ financial targets. (According to Straiker research; target count is not a confirmed breach count.)
 - Oct 21 - [Railway](https://blog.railway.com/p/security-disclosure-wednesday-october-21st) - Potential secret exposure; no CVSS listed: Unauthorized access may have exposed customer environment variables, including some decrypted secrets.
 - Oct 21 - [Palo Alto PAN-OS GlobalProtect](https://www.helpnetsecurity.com/2026/10/21/ransomware-groups-exploit-palo-alto-globalprotect-cve-2026-0257/) - Active exploitation; score not verified: Ransomware groups exploit an older authentication bypass to enter vulnerable networks. (CVE-2026-0257; retained for new exploitation reporting, not as a new vulnerability.)
 - Oct 20 - [eMudhra/emSign](https://www.csoonline.com/article/4238338/google-mozilla-revoke-emudhra-intermediates-after-private-key-compromise.html) - CA key compromise; no CVSS listed: Eight recoverable intermediate CA keys enable forged certificates against clients that still trust them. (Related remediation appears under Java, Go, and Firefox/NSS.)
