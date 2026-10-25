@@ -95,3 +95,7 @@ There are numerous callouts and functions that are present. Use the following:
 
 {: .warning }
 > *Warning blocks are always italicized*
+
+## Lists
+Lists can be whatever. This is a template format:
+` - **Date** - **[Title](Link)** - **Severity:** Description`
